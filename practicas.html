@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="assets/style.css">
+
+  <title>Prácticas · RUMBO</title>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       CABECERA
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <div class="container">
+
+
+      <!-- LOGO -->
+
+      <a
+        href="index.html"
+        class="brand">
+
+        <span class="logo-box">
+
+          <img
+            class="logo-mark"
+            src="assets/LOGOR.png"
+            alt="RUMBO"
+            onerror="
+              this.style.display='none';
+              this.nextElementSibling.style.display='inline-flex';
+            "
+          >
+
+          <svg
+            class="logo-fallback"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="RUMBO">
+
+            <circle
+              cx="18"
+              cy="24"
+              r="14"
+              fill="#4CC3F0"/>
+
+            <circle
+              cx="16"
+              cy="19"
+              r="2.2"
+              fill="#0B1229"/>
+
+            <path
+              d="M8 24 L2 20 L8 28 Z"
+              fill="#4CC3F0"/>
+
+            <text
+              x="21"
+              y="34"
+              font-family="Poppins, sans-serif"
+              font-weight="800"
+              font-size="30"
+              fill="#E8433F">
+              R
+            </text>
+
+          </svg>
+
+        </span>
+
+        RUMBO
+
+      </a>
+
+
+      <!-- =================================================
+           NAVEGACIÓN PC
+      ================================================== -->
+
+      <nav class="main-nav">
+
+
+        <a href="index.html">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+            <path d="M3 11l9-8 9 8"/>
+            <path d="M5 10v10h14V10"/>
+
+          </svg>
+
+          Inicio
+
+        </a>
+
+
+        <a href="cursos.html">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+            <path
+              d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+
+            <path
+              d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+
+          </svg>
+
+          Cursos
+
+        </a>
+
+
+        <a
+          href="practicas.html"
+          class="active">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+            <rect
+              x="8"
+              y="2"
+              width="8"
+              height="4"
+              rx="1"/>
+
+            <path
+              d="M9 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/>
+
+            <path
+              d="M9 12h6M9 16h6"/>
+
+          </svg>
+
+          Prácticas
+
+        </a>
+
+
+        <a href="tomos.html">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+            <path
+              d="M12 2 2 7l10 5 10-5-10-5z"/>
+
+            <path
+              d="M2 17l10 5 10-5"/>
+
+            <path
+              d="M2 12l10 5 10-5"/>
+
+          </svg>
+
+          Tomos
+
+        </a>
+
+
+      </nav>
+
+
+      <!-- =================================================
+           BOTÓN MENÚ MÓVIL
+      ================================================== -->
+
+      <button
+        class="nav-toggle"
+        aria-label="Abrir menú">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <path d="M3 6h18"/>
+          <path d="M3 12h18"/>
+          <path d="M3 18h18"/>
+
+        </svg>
+
+      </button>
+
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       CONTENIDO PRINCIPAL
+  ====================================================== -->
+
+  <main>
+
+
+    <section class="page-head container">
+
+      <h1>
+        Prácticas
+      </h1>
+
+      <p>
+        Ejercicios, exámenes y simulacros para reforzar lo aprendido en cada materia.
+      </p>
+
+    </section>
+
+
+    <section
+      class="section container"
+      style="padding-top:10px">
+
+
+      <!-- =================================================
+           PRÁCTICAS GENERADAS AUTOMÁTICAMENTE
+      ================================================== -->
+
+      <div
+        id="practicas-grid"
+        class="practicas-grid">
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container">
+
+
+      <span class="item">
+
+        <span
+          class="logo-box"
+          style="width:22px;height:22px">
+
+          <img
+            class="logo-mark"
+            style="width:22px;height:22px;border-radius:5px"
+            src="assets/LOGOR.png"
+            alt="RUMBO"
+            onerror="
+              this.style.display='none';
+              this.nextElementSibling.style.display='inline-flex';
+            "
+          >
+
+          <svg
+            class="logo-fallback"
+            style="width:22px;height:22px"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="RUMBO">
+
+            <circle
+              cx="18"
+              cy="24"
+              r="14"
+              fill="#4CC3F0"/>
+
+            <circle
+              cx="16"
+              cy="19"
+              r="2.2"
+              fill="#0B1229"/>
+
+            <path
+              d="M8 24 L2 20 L8 28 Z"
+              fill="#4CC3F0"/>
+
+            <text
+              x="21"
+              y="34"
+              font-family="Poppins, sans-serif"
+              font-weight="800"
+              font-size="30"
+              fill="#E8433F">
+              R
+            </text>
+
+          </svg>
+
+        </span>
+
+        RUMBO
+
+      </span>
+
+
+      <span
+        class="item"
+        id="footer-quote">
+      </span>
+
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       NAVEGACIÓN MÓVIL
+  ====================================================== -->
+
+  <nav class="bottom-nav">
+
+
+    <a href="index.html">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+
+        <path d="M3 11l9-8 9 8"/>
+        <path d="M5 10v10h14V10"/>
+
+      </svg>
+
+      Inicio
+
+    </a>
+
+
+    <a href="cursos.html">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+
+        <path
+          d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+
+        <path
+          d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+
+      </svg>
+
+      Cursos
+
+    </a>
+
+
+    <a
+      href="practicas.html"
+      class="active">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+
+        <rect
+          x="8"
+          y="2"
+          width="8"
+          height="4"
+          rx="1"/>
+
+        <path
+          d="M9 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/>
+
+        <path
+          d="M9 12h6M9 16h6"/>
+
+      </svg>
+
+      Prácticas
+
+    </a>
+
+
+    <a href="tomos.html">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+
+        <path
+          d="M12 2 2 7l10 5 10-5-10-5z"/>
+
+        <path
+          d="M2 17l10 5 10-5"/>
+
+        <path
+          d="M2 12l10 5 10-5"/>
+
+      </svg>
+
+      Tomos
+
+    </a>
+
+
+  </nav>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="assets/users.js"></script>
+
+  <script src="assets/frases.js"></script>
+
+  <script src="assets/data.js"></script>
+
+  <script src="assets/app.js"></script>
+
+  <!-- DATOS DE PRÁCTICAS -->
+  <script src="assets/practicas.js"></script>
+
+
+</body>
+
+</html>

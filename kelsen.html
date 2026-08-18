@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="assets/style.css?v=20260814"
+  >
+
+  <title>Kelsen · RUMBO</title>
+
+
+  <style>
+
+    /* =====================================================
+       KELSEN
+    ===================================================== */
+
+    .kelsen-page {
+      padding-bottom: 90px;
+    }
+
+
+    /* =====================================================
+       ENCABEZADO
+    ===================================================== */
+
+    .kelsen-head {
+
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      margin-top: 24px;
+      margin-bottom: 24px;
+
+    }
+
+
+    .kelsen-head h1 {
+
+      margin: 0;
+
+      font-family: Poppins, sans-serif;
+
+      font-size: 30px;
+      font-weight: 800;
+
+      color: #10182f;
+
+    }
+
+
+    .kelsen-head p {
+
+      margin: 5px 0 0;
+
+      color: #68738d;
+
+      font-size: 15px;
+
+    }
+
+
+    /* =====================================================
+       HORARIO
+    ===================================================== */
+
+    .horario-kelsen {
+
+      width: 100%;
+      max-width: 900px;
+
+      margin: 0 auto 30px;
+
+      border-radius: 18px;
+
+      overflow: hidden;
+
+      background: #fff;
+
+      border: 1px solid #e2e7f0;
+
+      box-shadow:
+        0 8px 28px rgba(20, 35, 70, .08);
+
+    }
+
+
+    .horario-kelsen img {
+
+      width: 100%;
+      height: auto;
+
+      display: block;
+
+    }
+
+
+    /* =====================================================
+       AVISO
+    ===================================================== */
+
+    .private-notice {
+
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      margin: 0 0 22px;
+
+    }
+
+
+    .private-notice svg {
+
+      width: 21px;
+      height: 21px;
+
+      flex-shrink: 0;
+
+    }
+
+
+    .private-notice p {
+
+      margin: 0;
+
+    }
+
+
+    /* =====================================================
+       LISTA
+    ===================================================== */
+
+    .kelsen-lessons {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 10px;
+
+    }
+
+
+    /* =====================================================
+       ITEM
+    ===================================================== */
+
+    .kelsen-item {
+
+      background: #fff;
+
+      border: 1px solid #e4e8f0;
+
+      border-radius: 14px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 5px 18px rgba(20, 35, 70, .05);
+
+      transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+    }
+
+
+    .kelsen-item.open {
+
+      border-color: #cbd8ff;
+
+      box-shadow:
+        0 8px 25px rgba(40, 80, 180, .10);
+
+    }
+
+
+    /* =====================================================
+       BOTÓN
+    ===================================================== */
+
+    .kelsen-trigger {
+
+      width: 100%;
+
+      border: 0;
+
+      background: transparent;
+
+      padding: 16px 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      cursor: pointer;
+
+      text-align: left;
+
+      color: #10182f;
+
+      font-family: Inter, sans-serif;
+
+      -webkit-tap-highlight-color: transparent;
+
+    }
+
+
+    .kelsen-trigger:hover {
+
+      background: #f8faff;
+
+    }
+
+
+    .kelsen-trigger:focus {
+
+      outline: none;
+
+    }
+
+
+    /* =====================================================
+       NÚMERO
+    ===================================================== */
+
+    .lesson-number {
+
+      width: 38px;
+      height: 38px;
+
+      border-radius: 10px;
+
+      background: #f1f4fa;
+
+      color: #53617c;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+      flex-shrink: 0;
+
+    }
+
+
+    /* =====================================================
+       INFORMACIÓN
+    ===================================================== */
+
+    .lesson-info {
+
+      flex: 1;
+
+      min-width: 0;
+
+    }
+
+
+    .lesson-title {
+
+      display: block;
+
+      font-size: 15px;
+
+      font-weight: 700;
+
+      color: #18213b;
+
+      overflow-wrap: anywhere;
+
+    }
+
+
+    .lesson-type {
+
+      display: block;
+
+      margin-top: 3px;
+
+      font-size: 12px;
+
+      color: #8a94aa;
+
+    }
+
+
+    /* =====================================================
+       FLECHA
+    ===================================================== */
+
+    .lesson-arrow {
+
+      width: 22px;
+      height: 22px;
+
+      color: #3564e8;
+
+      flex-shrink: 0;
+
+      transition:
+        transform .25s ease;
+
+    }
+
+
+    .lesson-arrow svg {
+
+      width: 100%;
+      height: 100%;
+
+    }
+
+
+    .kelsen-item.open .lesson-arrow {
+
+      transform: rotate(180deg);
+
+    }
+
+
+    /* =====================================================
+       CONTENIDO
+    ===================================================== */
+
+    .kelsen-content {
+
+      display: grid;
+
+      grid-template-rows: 0fr;
+
+      transition:
+        grid-template-rows .28s ease;
+
+    }
+
+
+    .kelsen-item.open .kelsen-content {
+
+      grid-template-rows: 1fr;
+
+    }
+
+
+    .kelsen-content-inner {
+
+      overflow: hidden;
+
+      min-height: 0;
+
+    }
+
+
+    /* =====================================================
+       VIDEO
+    ===================================================== */
+
+    .video-container {
+
+      padding: 0 18px 18px;
+
+    }
+
+
+    .video-wrapper {
+
+      width: 100%;
+
+      position: relative;
+
+      background: #111827;
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
+      /*
+       * En lugar de depender solamente de aspect-ratio,
+       * usamos padding para mayor compatibilidad.
+       */
+
+      height: 0;
+
+      padding-bottom: 56.25%;
+
+    }
+
+
+    .video-wrapper iframe {
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      border: 0;
+
+      display: block;
+
+      background: #111827;
+
+    }
+
+
+    /* =====================================================
+       LOADING
+    ===================================================== */
+
+    .video-loading {
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 2;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 20px;
+
+      color: white;
+
+      background: #111827;
+
+      font-size: 14px;
+
+    }
+
+
+    .video-loading.error {
+
+      color: #ffdddd;
+
+    }
+
+
+    /* =====================================================
+       BOTÓN DRIVE
+    ===================================================== */
+
+    .drive-button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      margin-top: 10px;
+
+      padding: 9px 13px;
+
+      border-radius: 9px;
+
+      background: #edf3ff;
+
+      color: #2858d7;
+
+      text-decoration: none;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      -webkit-tap-highlight-color: transparent;
+
+    }
+
+
+    .drive-button:hover {
+
+      background: #dfe9ff;
+
+    }
+
+
+    /* =====================================================
+       VACÍO
+    ===================================================== */
+
+    .kelsen-empty {
+
+      padding: 35px;
+
+      text-align: center;
+
+      color: #68738d;
+
+      background: #fff;
+
+      border: 1px solid #e5e9f2;
+
+      border-radius: 14px;
+
+    }
+
+
+    .kelsen-empty code {
+
+      display: inline-block;
+
+      margin-top: 8px;
+
+      padding: 4px 8px;
+
+      border-radius: 6px;
+
+      background: #f1f4fa;
+
+      color: #2858d7;
+
+    }
+
+
+    /* =====================================================
+       ERROR
+    ===================================================== */
+
+    .kelsen-error {
+
+      padding: 20px;
+
+      border-radius: 14px;
+
+      background: #fff3f3;
+
+      border: 1px solid #ffd5d5;
+
+      color: #a52a2a;
+
+    }
+
+
+    /* =====================================================
+       CELULAR
+    ===================================================== */
+
+    @media (max-width: 700px) {
+
+      .kelsen-head {
+
+        margin-top: 18px;
+        margin-bottom: 18px;
+
+      }
+
+
+      .kelsen-head h1 {
+
+        font-size: 25px;
+
+      }
+
+
+      .kelsen-head p {
+
+        font-size: 13px;
+
+      }
+
+
+      .horario-kelsen {
+
+        width: 100%;
+
+        border-radius: 12px;
+
+        margin-bottom: 22px;
+
+      }
+
+
+      .kelsen-trigger {
+
+        padding: 14px;
+
+        gap: 10px;
+
+      }
+
+
+      .lesson-number {
+
+        width: 34px;
+        height: 34px;
+
+      }
+
+
+      .lesson-title {
+
+        font-size: 14px;
+
+      }
+
+
+      .video-container {
+
+        padding: 0 12px 12px;
+
+      }
+
+
+      .private-notice {
+
+        align-items: flex-start;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BLOQUEO / ACCESO
+===================================================== -->
+
+
+
+
+<!-- =====================================================
+     ACCESO
+===================================================== -->
+
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+  <div class="container">
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+
+      <span class="logo-box">
+
+        <img
+          class="logo-mark"
+          src="assets/LOGOR.png"
+          alt="RUMBO"
+          onerror="
+            this.style.display='none';
+            this.nextElementSibling.style.display='inline-flex'
+          "
+        >
+
+        <svg
+          class="logo-fallback"
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <circle
+            cx="18"
+            cy="24"
+            r="14"
+            fill="#4CC3F0"
+          />
+
+          <circle
+            cx="16"
+            cy="19"
+            r="2.2"
+            fill="#0B1229"
+          />
+
+          <path
+            d="M8 24 L2 20 L8 28 Z"
+            fill="#4CC3F0"
+          />
+
+          <text
+            x="21"
+            y="34"
+            font-family="Poppins, sans-serif"
+            font-weight="800"
+            font-size="30"
+            fill="#E8433F"
+          >
+            R
+          </text>
+
+        </svg>
+
+      </span>
+
+      RUMBO
+
+    </a>
+
+
+    <nav class="main-nav">
+
+      <a href="index.html">
+        Inicio
+      </a>
+
+      <a
+        href="cursos.html"
+        class="active"
+      >
+        Cursos
+      </a>
+
+      <a href="practicas.html">
+        Prácticas
+      </a>
+
+      <a href="tomos.html">
+        Tomos
+      </a>
+
+    </nav>
+
+
+    <button
+      class="nav-toggle"
+      aria-label="Abrir menú"
+      type="button"
+    >
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+
+        <path d="M3 6h18"/>
+        <path d="M3 12h18"/>
+        <path d="M3 18h18"/>
+
+      </svg>
+
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- =====================================================
+     CONTENIDO
+===================================================== -->
+
+<main class="kelsen-page">
+
+  <div class="container">
+
+
+    <!-- =================================================
+         FRASE
+    ================================================== -->
+
+    <p class="course-quote">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+
+        <path
+          d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"
+        />
+
+      </svg>
+
+
+      <span id="course-quote-text"></span>
+
+    </p>
+
+
+    <!-- =================================================
+         BREADCRUMB
+    ================================================== -->
+
+    <nav class="breadcrumb">
+
+      <a href="cursos.html">
+        Cursos
+      </a>
+
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+
+        <path d="M9 6l6 6-6 6"/>
+
+      </svg>
+
+
+      <span>
+        Kelsen
+      </span>
+
+    </nav>
+
+
+    <!-- =================================================
+         TÍTULO
+    ================================================== -->
+
+    <div class="kelsen-head">
+
+      <div>
+
+        <h1>
+          Kelsen
+        </h1>
+
+
+        <p id="lesson-count">
+          Cargando clases...
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================================
+         HORARIO
+    ================================================== -->
+
+    <div class="horario-kelsen">
+
+      <img
+        src="assets/horario-kelsen.png"
+        alt="Horario de clases de Kelsen"
+      >
+
+    </div>
+
+
+    <!-- =================================================
+         AVISO
+    ================================================== -->
+
+    <div class="private-notice">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+
+        <rect
+          x="4"
+          y="10"
+          width="16"
+          height="10"
+          rx="2"
+        />
+
+        <path
+          d="M8 10V7a4 4 0 0 1 8 0v3"
+        />
+
+      </svg>
+
+
+      <p>
+        Selecciona una clase para desplegar el video.
+        El video solamente se carga cuando lo abres.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =================================================
+       LISTA DE CLASES
+  ================================================== -->
+
+  <section
+    class="container section"
+    style="padding-top:0"
+  >
+
+    <div
+      class="kelsen-lessons"
+      id="kelsen-lessons"
+    ></div>
+
+  </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+  <div class="container">
+
+    <span class="item">
+
+      <span
+        class="logo-box"
+        style="width:22px;height:22px"
+      >
+
+        <img
+          class="logo-mark"
+          style="
+            width:22px;
+            height:22px;
+            border-radius:5px
+          "
+          src="assets/LOGOR.png"
+          alt="RUMBO"
+        >
+
+      </span>
+
+      RUMBO
+
+    </span>
+
+
+    <span
+      class="item"
+      id="footer-quote"
+    ></span>
+
+
+    <a
+      class="item"
+      href="#"
+      id="logout-link"
+    >
+      Cerrar sesión
+    </a>
+
+  </div>
+
+</footer>
+
+
+<!-- =====================================================
+     NAVEGACIÓN MÓVIL
+===================================================== -->
+
+<nav class="bottom-nav">
+
+  <a href="index.html">
+    Inicio
+  </a>
+
+  <a
+    href="cursos.html"
+    class="active"
+  >
+    Cursos
+  </a>
+
+  <a href="practicas.html">
+    Prácticas
+  </a>
+
+  <a href="tomos.html">
+    Tomos
+  </a>
+
+</nav>
+
+
+<!-- =====================================================
+     SCRIPTS DEL SITIO
+===================================================== -->
+
+<script src="assets/users.js?v=20260814"></script>
+
+<script src="assets/frases.js?v=20260814"></script>
+
+<script src="assets/auth.js?v=20260814"></script>
+
+<script src="assets/data.js?v=20260814"></script>
+
+<script src="assets/app.js?v=20260814"></script>
+
+
+<!-- =====================================================
+     KELSEN
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+
+    /* =================================================
+       ELEMENTOS
+    ================================================= */
+
+    const lista =
+      document.getElementById(
+        "kelsen-lessons"
+      );
+
+
+    const contador =
+      document.getElementById(
+        "lesson-count"
+      );
+
+
+    /* =================================================
+       OBTENER VIDEOS
+    ================================================= */
+
+    let videos = [];
+
+
+    /*
+     * TU data.js AHORA DEBE TENER:
+     *
+     * window.kelsenVideos = [
+     *   {
+     *     titulo: "...",
+     *     url: "..."
+     *   }
+     * ];
+     */
+
+    if (
+      Array.isArray(
+        window.kelsenVideos
+      )
+    ) {
+
+      videos =
+        window.kelsenVideos;
+
+    }
+
+
+    /*
+     * DEBUG
+     *
+     * Esto ayuda a comprobar desde Android
+     * qué está recibiendo la página.
+     */
+
+    console.log(
+      "KELSEN:",
+      videos
+    );
+
+
+    console.log(
+      "Cantidad Kelsen:",
+      videos.length
+    );
+
+
+    /* =================================================
+       COMPROBAR
+    ================================================= */
+
+    if (!videos.length) {
+
+      contador.textContent =
+        "No hay clases disponibles";
+
+
+      lista.innerHTML = `
+
+        <div class="kelsen-empty">
+
+          <strong>
+            No se encontraron clases de Kelsen.
+          </strong>
+
+          <br><br>
+
+          Comprueba que
+          <strong>data.js</strong>
+          tenga:
+
+          <br><br>
+
+          <code>
+            window.kelsenVideos = [...]
+          </code>
+
+        </div>
+
+      `;
+
+      return;
+
+    }
+
+
+    /* =================================================
+       CONTADOR
+    ================================================= */
+
+    contador.textContent =
+      videos.length +
+      (
+        videos.length === 1
+          ? " clase en video"
+          : " clases en video"
+      );
+
+
+    /* =================================================
+       CONVERTIR DRIVE A PREVIEW
+    ================================================= */
+
+    function drivePreview(url) {
+
+
+      if (!url) {
+        return "";
+      }
+
+
+      /*
+       * FORMATO:
+       *
+       * /file/d/ID/view
+       */
+
+      let match =
+        url.match(
+          /\/file\/d\/([^/]+)/
+        );
+
+
+      if (match) {
+
+        return (
+          "https://drive.google.com/file/d/" +
+          match[1] +
+          "/preview"
+        );
+
+      }
+
+
+      /*
+       * FORMATO:
+       *
+       * open?id=ID
+       */
+
+      match =
+        url.match(
+          /[?&]id=([^&]+)/
+        );
+
+
+      if (match) {
+
+        return (
+          "https://drive.google.com/file/d/" +
+          match[1] +
+          "/preview"
+        );
+
+      }
+
+
+      /*
+       * YA ES PREVIEW
+       */
+
+      if (
+        url.includes("/preview")
+      ) {
+
+        return url;
+
+      }
+
+
+      return url;
+
+    }
+
+
+    /* =================================================
+       CERRAR ITEM
+    ================================================= */
+
+    function cerrarItem(item) {
+
+
+      if (!item) {
+        return;
+      }
+
+
+      item.classList.remove(
+        "open"
+      );
+
+
+      const trigger =
+        item.querySelector(
+          ".kelsen-trigger"
+        );
+
+
+      if (trigger) {
+
+        trigger.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+
+      /*
+       * Eliminar iframe
+       */
+
+      const iframe =
+        item.querySelector(
+          "iframe"
+        );
+
+
+      if (iframe) {
+
+        iframe.remove();
+
+      }
+
+
+      /*
+       * Mostrar loading
+       */
+
+      const loading =
+        item.querySelector(
+          ".video-loading"
+        );
+
+
+      if (loading) {
+
+        loading.style.display =
+          "flex";
+
+        loading.textContent =
+          "Preparando video...";
+
+        loading.classList.remove(
+          "error"
+        );
+
+      }
+
+    }
+
+
+    /* =================================================
+       CREAR CLASES
+    ================================================= */
+
+    videos.forEach(
+      function (video, index) {
+
+
+        /* =============================================
+           ITEM
+        ============================================= */
+
+        const item =
+          document.createElement(
+            "article"
+          );
+
+
+        item.className =
+          "kelsen-item";
+
+
+        /* =============================================
+           BOTÓN
+        ============================================= */
+
+        const trigger =
+          document.createElement(
+            "button"
+          );
+
+
+        trigger.type =
+          "button";
+
+
+        trigger.className =
+          "kelsen-trigger";
+
+
+        trigger.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+
+        /* =============================================
+           NÚMERO
+        ============================================= */
+
+        const numero =
+          document.createElement(
+            "span"
+          );
+
+
+        numero.className =
+          "lesson-number";
+
+
+        numero.textContent =
+          index + 1;
+
+
+        /* =============================================
+           INFORMACIÓN
+        ============================================= */
+
+        const info =
+          document.createElement(
+            "span"
+          );
+
+
+        info.className =
+          "lesson-info";
+
+
+        const titulo =
+          document.createElement(
+            "span"
+          );
+
+
+        titulo.className =
+          "lesson-title";
+
+
+        titulo.textContent =
+          video.titulo ||
+          video.nombre ||
+          "Clase " +
+          (index + 1);
+
+
+        const tipo =
+          document.createElement(
+            "span"
+          );
+
+
+        tipo.className =
+          "lesson-type";
+
+
+        tipo.textContent =
+          "Video de clase";
+
+
+        info.appendChild(
+          titulo
+        );
+
+
+        info.appendChild(
+          tipo
+        );
+
+
+        /* =============================================
+           FLECHA
+        ============================================= */
+
+        const arrow =
+          document.createElement(
+            "span"
+          );
+
+
+        arrow.className =
+          "lesson-arrow";
+
+
+        arrow.innerHTML = `
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+
+            <path
+              d="M6 9l6 6 6-6"
+            />
+
+          </svg>
+
+        `;
+
+
+        /* =============================================
+           ARMAR BOTÓN
+        ============================================= */
+
+        trigger.appendChild(
+          numero
+        );
+
+
+        trigger.appendChild(
+          info
+        );
+
+
+        trigger.appendChild(
+          arrow
+        );
+
+
+        /* =============================================
+           CONTENIDO
+        ============================================= */
+
+        const content =
+          document.createElement(
+            "div"
+          );
+
+
+        content.className =
+          "kelsen-content";
+
+
+        const inner =
+          document.createElement(
+            "div"
+          );
+
+
+        inner.className =
+          "kelsen-content-inner";
+
+
+        const videoContainer =
+          document.createElement(
+            "div"
+          );
+
+
+        videoContainer.className =
+          "video-container";
+
+
+        /* =============================================
+           WRAPPER
+        ============================================= */
+
+        const wrapper =
+          document.createElement(
+            "div"
+          );
+
+
+        wrapper.className =
+          "video-wrapper";
+
+
+        /* =============================================
+           LOADING
+        ============================================= */
+
+        const loading =
+          document.createElement(
+            "div"
+          );
+
+
+        loading.className =
+          "video-loading";
+
+
+        loading.textContent =
+          "Preparando video...";
+
+
+        wrapper.appendChild(
+          loading
+        );
+
+
+        /* =============================================
+           BOTÓN DRIVE
+        ============================================= */
+
+        const driveButton =
+          document.createElement(
+            "a"
+          );
+
+
+        driveButton.className =
+          "drive-button";
+
+
+        driveButton.href =
+          video.url || "#";
+
+
+        driveButton.target =
+          "_blank";
+
+
+        driveButton.rel =
+          "noopener noreferrer";
+
+
+        driveButton.textContent =
+          "Abrir en Google Drive";
+
+
+        /* =============================================
+           ARMAR CONTENIDO
+        ============================================= */
+
+        videoContainer.appendChild(
+          wrapper
+        );
+
+
+        videoContainer.appendChild(
+          driveButton
+        );
+
+
+        inner.appendChild(
+          videoContainer
+        );
+
+
+        content.appendChild(
+          inner
+        );
+
+
+        item.appendChild(
+          trigger
+        );
+
+
+        item.appendChild(
+          content
+        );
+
+
+        lista.appendChild(
+          item
+        );
+
+
+        /* =============================================
+           CLICK
+        ============================================= */
+
+        trigger.addEventListener(
+          "click",
+          function () {
+
+
+            const estabaAbierto =
+              item.classList.contains(
+                "open"
+              );
+
+
+            /*
+             * CERRAR LOS DEMÁS
+             */
+
+            document
+              .querySelectorAll(
+                ".kelsen-item.open"
+              )
+              .forEach(
+                function (otro) {
+
+                  if (
+                    otro !== item
+                  ) {
+
+                    cerrarItem(
+                      otro
+                    );
+
+                  }
+
+                }
+              );
+
+
+            /*
+             * SI YA ESTABA ABIERTO
+             */
+
+            if (
+              estabaAbierto
+            ) {
+
+              cerrarItem(
+                item
+              );
+
+              return;
+
+            }
+
+
+            /*
+             * ABRIR
+             */
+
+            item.classList.add(
+              "open"
+            );
+
+
+            trigger.setAttribute(
+              "aria-expanded",
+              "true"
+            );
+
+
+            /*
+             * COMPROBAR URL
+             */
+
+            const videoUrl =
+              video.url || "";
+
+
+            if (!videoUrl) {
+
+              loading.textContent =
+                "Esta clase no tiene video disponible.";
+
+
+              loading.classList.add(
+                "error"
+              );
+
+
+              return;
+
+            }
+
+
+            /*
+             * CONVERTIR URL
+             */
+
+            const previewUrl =
+              drivePreview(
+                videoUrl
+              );
+
+
+            if (!previewUrl) {
+
+              loading.textContent =
+                "No se pudo obtener el video.";
+
+
+              loading.classList.add(
+                "error"
+              );
+
+
+              return;
+
+            }
+
+
+            /*
+             * EVITAR DUPLICADO
+             */
+
+            if (
+              wrapper.querySelector(
+                "iframe"
+              )
+            ) {
+
+              return;
+
+            }
+
+
+            /*
+             * CREAR IFRAME
+             */
+
+            const iframe =
+              document.createElement(
+                "iframe"
+              );
+
+
+            iframe.src =
+              previewUrl;
+
+
+            iframe.title =
+              video.titulo ||
+              video.nombre ||
+              "Video de Kelsen";
+
+
+            iframe.setAttribute(
+              "allow",
+              "autoplay; encrypted-media; fullscreen; picture-in-picture"
+            );
+
+
+            iframe.setAttribute(
+              "allowfullscreen",
+              ""
+            );
+
+
+            iframe.setAttribute(
+              "webkitallowfullscreen",
+              ""
+            );
+
+
+            iframe.setAttribute(
+              "mozallowfullscreen",
+              ""
+            );
+
+
+            iframe.setAttribute(
+              "loading",
+              "lazy"
+            );
+
+
+            iframe.setAttribute(
+              "referrerpolicy",
+              "no-referrer-when-downgrade"
+            );
+
+
+            /*
+             * VIDEO CARGADO
+             */
+
+            iframe.addEventListener(
+              "load",
+              function () {
+
+                loading.style.display =
+                  "none";
+
+              }
+            );
+
+
+            /*
+             * INSERTAR
+             */
+
+            wrapper.appendChild(
+              iframe
+            );
+
+
+          }
+        );
+
+
+      }
+    );
+
+
+  }
+);
+
+</script>
+
+
+</body>
+
+</html>
