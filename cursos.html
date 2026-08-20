@@ -1,1026 +1,651 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css">
 
-  <title>Academias · RUMBO</title>
+<title>Academias · RUMBO</title>
 
-  <style>
+<style>
+  .academy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .academy-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 190px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 18px;
+    text-decoration: none;
+    color: #0B1229;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    transition: transform .2s, box-shadow .2s;
+    border-top: 5px solid transparent;
+    cursor: pointer;
+  }
+
+  .academy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.13);
+  }
+
+  .academy-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    border-radius: 16px;
+    color: #fff;
+    font-family: Poppins, sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+  }
+
+  .academy-card-title {
+    font-family: Poppins, sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+  }
+
+  .academy-card-text {
+    margin-top: 5px;
+    color: #667085;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+  }
+
+  /* ESPARTA */
+  .academy-card.esparta {
+    border-top-color: #E8433F;
+  }
+
+  .academy-card.esparta .academy-card-icon {
+    background: #E8433F;
+  }
+
+  .academy-card.esparta .academy-card-title {
+    color: #E8433F;
+  }
+
+  /* KELSEN */
+  .academy-card.kelsen {
+    border-top-color: #6B7280;
+  }
+
+  .academy-card.kelsen .academy-card-icon {
+    background: #6B7280;
+  }
+
+  .academy-card.kelsen .academy-card-title {
+    color: #6B7280;
+  }
+
+  /* BRICEÑO */
+  .academy-card.briceno {
+    border-top-color: #2563EB;
+  }
+
+  .academy-card.briceno .academy-card-icon {
+    background: #2563EB;
+  }
+
+  .academy-card.briceno .academy-card-title {
+    color: #2563EB;
+  }
+
+  @media (max-width: 900px) {
     .academy-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
     }
+  }
 
-    .academy-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 190px;
-      padding: 25px;
-      background: #fff;
-      border-radius: 18px;
-      text-decoration: none;
-      color: #0B1229;
-      box-shadow: 0 8px 25px rgba(0,0,0,.08);
-      transition: transform .2s, box-shadow .2s;
-      border-top: 5px solid transparent;
-      cursor: pointer;
+  @media (max-width: 700px) {
+    .academy-grid {
+      grid-template-columns: 1fr;
     }
-
-    .academy-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0,0,0,.13);
-    }
-
-    .academy-card-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      margin-bottom: 15px;
-      border-radius: 16px;
-      color: #fff;
-      font-family: Poppins, sans-serif;
-      font-size: 28px;
-      font-weight: 800;
-    }
-
-    .academy-card-title {
-      font-family: Poppins, sans-serif;
-      font-size: 21px;
-      font-weight: 800;
-    }
-
-    .academy-card-text {
-      margin-top: 5px;
-      color: #667085;
-      font-family: Inter, sans-serif;
-      font-size: 14px;
-    }
-
-    /* ESPARTA */
-    .academy-card.esparta {
-      border-top-color: #E8433F;
-    }
-
-    .academy-card.esparta .academy-card-icon {
-      background: #E8433F;
-    }
-
-    .academy-card.esparta .academy-card-title {
-      color: #E8433F;
-    }
-
-    /* KELSEN */
-    .academy-card.kelsen {
-      border-top-color: #6B7280;
-    }
-
-    .academy-card.kelsen .academy-card-icon {
-      background: #6B7280;
-    }
-
-    .academy-card.kelsen .academy-card-title {
-      color: #6B7280;
-    }
-
-    /* BRICEÑO */
-    .academy-card.briceno {
-      border-top-color: #2563EB;
-    }
-
-    .academy-card.briceno .academy-card-icon {
-      background: #2563EB;
-    }
-
-    .academy-card.briceno .academy-card-title {
-      color: #2563EB;
-    }
-
-
-    /* =========================================
-       MODAL LOGIN DE ACADEMIA
-       ========================================= */
-
-    .academy-login-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-
-      display: none;
-      align-items: center;
-      justify-content: center;
-
-      padding: 20px;
-
-      background: rgba(11, 18, 41, .72);
-      backdrop-filter: blur(7px);
-    }
-
-    .academy-login-overlay.active {
-      display: flex;
-    }
-
-    .academy-login-card {
-      width: 100%;
-      max-width: 420px;
-
-      padding: 32px;
-
-      background: #fff;
-      border-radius: 22px;
-
-      box-shadow: 0 25px 70px rgba(0,0,0,.25);
-
-      animation: academyLoginIn .2s ease;
-    }
-
-    @keyframes academyLoginIn {
-      from {
-        opacity: 0;
-        transform: translateY(15px) scale(.98);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    .academy-login-close {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .academy-login-close button {
-      width: 36px;
-      height: 36px;
-
-      border: 0;
-      border-radius: 50%;
-
-      background: #F2F4F7;
-      color: #475467;
-
-      font-size: 20px;
-
-      cursor: pointer;
-    }
-
-    .academy-login-icon {
-      width: 64px;
-      height: 64px;
-
-      margin: 5px auto 15px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 17px;
-
-      color: #fff;
-
-      font-family: Poppins, sans-serif;
-      font-size: 28px;
-      font-weight: 800;
-    }
-
-    .academy-login-title {
-      margin: 0;
-
-      text-align: center;
-
-      font-family: Poppins, sans-serif;
-      font-size: 25px;
-      font-weight: 800;
-
-      color: #0B1229;
-    }
-
-    .academy-login-subtitle {
-      margin: 7px 0 25px;
-
-      text-align: center;
-
-      color: #667085;
-
-      font-family: Inter, sans-serif;
-      font-size: 14px;
-    }
-
-    .academy-login-form {
-      display: flex;
-      flex-direction: column;
-      gap: 17px;
-    }
-
-    .academy-login-form label {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-
-      color: #344054;
-
-      font-family: Inter, sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .academy-login-form input {
-      width: 100%;
-      box-sizing: border-box;
-
-      padding: 13px 14px;
-
-      border: 1px solid #D0D5DD;
-      border-radius: 11px;
-
-      outline: none;
-
-      font-family: Inter, sans-serif;
-      font-size: 15px;
-
-      transition: border-color .2s, box-shadow .2s;
-    }
-
-    .academy-login-form input:focus {
-      border-color: #4CC3F0;
-      box-shadow: 0 0 0 3px rgba(76,195,240,.15);
-    }
-
-    .academy-login-button {
-      width: 100%;
-
-      margin-top: 5px;
-      padding: 14px;
-
-      border: 0;
-      border-radius: 11px;
-
-      background: #0B1229;
-      color: #fff;
-
-      font-family: Inter, sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-
-      cursor: pointer;
-
-      transition: opacity .2s, transform .2s;
-    }
-
-    .academy-login-button:hover {
-      opacity: .92;
-    }
-
-    .academy-login-button:active {
-      transform: scale(.98);
-    }
-
-    .academy-login-error {
-      min-height: 20px;
-
-      margin: 0;
-
-      text-align: center;
-
-      color: #E8433F;
-
-      font-family: Inter, sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-
-    @media (max-width: 900px) {
-      .academy-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 700px) {
-      .academy-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .academy-login-card {
-        padding: 25px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
-
 
 <body>
 
+<!-- ==========================================
+     LOGIN DE ACADEMIAS DESACTIVADO TEMPORALMENTE
+     
+     Se conserva el código para poder activarlo
+     nuevamente más adelante.
+     ========================================== -->
 
-  <!-- ==========================================
-       LOGIN DE ACADEMIA
-       ========================================== -->
+<!--
+
+<div
+  id="academy-login-overlay"
+  class="academy-login-overlay">
 
   <div
-    id="academy-login-overlay"
-    class="academy-login-overlay">
-
-    <div
-      class="academy-login-card"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="academy-login-title">
-
-
-      <div class="academy-login-close">
-
-        <button
-          type="button"
-          id="academy-login-close"
-          aria-label="Cerrar">
-
-          ×
-
-        </button>
-
-      </div>
-
-
-      <div
-        id="academy-login-icon"
-        class="academy-login-icon">
-
-        E
-
-      </div>
-
-
-      <h2
-        id="academy-login-title"
-        class="academy-login-title">
-
-        ESPARTA
-
-      </h2>
-
-
-      <p class="academy-login-subtitle">
-
-        Ingresa tus credenciales para acceder a los cursos.
-
-      </p>
-
-
-      <form
-        id="academy-login-form"
-        class="academy-login-form"
-        autocomplete="off">
-
-
-        <label>
-
-          Usuario
-
-          <input
-            type="text"
-            id="academy-user"
-            autocomplete="username"
-            required>
-
-        </label>
-
-
-        <label>
-
-          Contraseña
-
-          <input
-            type="password"
-            id="academy-pass"
-            autocomplete="current-password"
-            required>
-
-        </label>
-
-
-        <button
-          type="submit"
-          class="academy-login-button">
-
-          Ingresar
-
-        </button>
-
-
-        <p
-          id="academy-login-error"
-          class="academy-login-error">
-
-        </p>
-
-      </form>
-
-    </div>
-
-  </div>
-
-
-  <!-- ==========================================
-       HEADER
-       ========================================== -->
-
-  <header class="site-header">
-
-    <div class="container">
-
-
-      <a
-        href="index.html"
-        class="brand">
-
-
-        <span class="logo-box">
-
-          <img
-            class="logo-mark"
-            src="assets/LOGOR.png"
-            alt="RUMBO"
-            onerror="
-              this.style.display='none';
-              this.nextElementSibling.style.display='inline-flex'
-            "
-          >
-
-
-          <svg
-            class="logo-fallback"
-            viewBox="0 0 48 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-
-            <circle
-              cx="18"
-              cy="24"
-              r="14"
-              fill="#4CC3F0"/>
-
-            <circle
-              cx="16"
-              cy="19"
-              r="2.2"
-              fill="#0B1229"/>
-
-            <path
-              d="M8 24 L2 20 L8 28 Z"
-              fill="#4CC3F0"/>
-
-            <text
-              x="21"
-              y="34"
-              font-family="Poppins, sans-serif"
-              font-weight="800"
-              font-size="30"
-              fill="#E8433F">
-
-              R
-
-            </text>
-
-          </svg>
-
-        </span>
-
-
-        RUMBO
-
-      </a>
-
-
-      <nav class="main-nav">
-
-        <a href="index.html">
-          Inicio
-        </a>
-
-        <a
-          href="cursos.html"
-          class="active">
-
-          Cursos
-
-        </a>
-
-        <a href="practicas.html">
-          Prácticas
-        </a>
-
-        <a href="tomos.html">
-          Tomos
-        </a>
-
-      </nav>
-
+    class="academy-login-card"
+    role="dialog"
+    aria-modal="true">
+
+    <div class="academy-login-close">
 
       <button
-        class="nav-toggle"
-        aria-label="Abrir menú">
+        type="button"
+        id="academy-login-close"
+        aria-label="Cerrar">
 
-        ☰
+        ×
 
       </button>
 
     </div>
 
-  </header>
+    <div
+      id="academy-login-icon"
+      class="academy-login-icon">
 
+      E
 
-  <!-- ==========================================
-       CONTENIDO
-       ========================================== -->
+    </div>
 
-  <main>
+    <h2
+      id="academy-login-title"
+      class="academy-login-title">
 
+      ESPARTA
 
-    <section class="page-head container">
+    </h2>
 
-      <h1>
-        Academias
-      </h1>
-      <h2>
-        Las contraseñas se encuentan en la pagina de inicio. 
-      </h2>
+    <p class="academy-login-subtitle">
 
-      <p>
-        Selecciona una academia para acceder a sus cursos.
+      Ingresa tus credenciales para acceder a los cursos.
+
+    </p>
+
+    <form
+      id="academy-login-form"
+      class="academy-login-form"
+      autocomplete="off">
+
+      <label>
+
+        Usuario
+
+        <input
+          type="text"
+          id="academy-user"
+          autocomplete="username"
+          required>
+
+      </label>
+
+      <label>
+
+        Contraseña
+
+        <input
+          type="password"
+          id="academy-pass"
+          autocomplete="current-password"
+          required>
+
+      </label>
+
+      <button
+        type="submit"
+        class="academy-login-button">
+
+        Ingresar
+
+      </button>
+
+      <p
+        id="academy-login-error"
+        class="academy-login-error">
+
       </p>
 
-    </section>
+    </form>
 
+  </div>
 
-    <section
-      class="section container"
-      style="padding-top:0">
+</div>
 
+-->
 
-      <div class="academy-grid">
+<!-- ==========================================
+     HEADER
+     ========================================== -->
 
+<header class="site-header">
 
-        <!-- ==========================================
-             ESPARTA
-             ========================================== -->
+  <div class="container">
 
-        <a
-          href="esparta.html"
-          class="academy-card esparta"
-          data-academy="esparta"
-          data-name="ESPARTA"
-          data-icon="E">
+    <a
+      href="index.html"
+      class="brand">
 
+      <span class="logo-box">
 
-          <span class="academy-card-icon">
+        <img
+          class="logo-mark"
+          src="assets/LOGOR.png"
+          alt="RUMBO"
+          onerror="
+            this.style.display='none';
+            this.nextElementSibling.style.display='inline-flex'
+          "
+        >
 
-            E
+        <svg
+          class="logo-fallback"
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
 
-          </span>
+          <circle
+            cx="18"
+            cy="24"
+            r="14"
+            fill="#4CC3F0"/>
 
+          <circle
+            cx="16"
+            cy="19"
+            r="2.2"
+            fill="#0B1229"/>
 
-          <span class="academy-card-title">
+          <path
+            d="M8 24 L2 20 L8 28 Z"
+            fill="#4CC3F0"/>
 
-            ESPARTA
+          <text
+            x="21"
+            y="34"
+            font-family="Poppins, sans-serif"
+            font-weight="800"
+            font-size="30"
+            fill="#E8433F">
 
-          </span>
+            R
 
+          </text>
 
-          <span class="academy-card-text">
-
-            Cursos y clases
-
-          </span>
-
-
-        </a>
-
-
-        <!-- ==========================================
-             KELSEN
-             ========================================== -->
-
-        <a
-          href="kelsen.html"
-          class="academy-card kelsen"
-          data-academy="kelsen"
-          data-name="KELSEN"
-          data-icon="K">
-
-
-          <span class="academy-card-icon">
-
-            K
-
-          </span>
-
-
-          <span class="academy-card-title">
-
-            KELSEN
-
-          </span>
-
-
-          <span class="academy-card-text">
-
-            Cursos y clases
-
-          </span>
-
-
-        </a>
-
-
-        <!-- ==========================================
-             BRICEÑO
-             ========================================== -->
-
-        <a
-          href="briceño.html"
-          class="academy-card briceno"
-          data-academy="briceno"
-          data-name="BRICEÑO"
-          data-icon="B">
-
-
-          <span class="academy-card-icon">
-
-            B
-
-          </span>
-
-
-          <span class="academy-card-title">
-
-            BRICEÑO
-
-          </span>
-
-
-          <span class="academy-card-text">
-
-            Cursos y clases
-
-          </span>
-
-
-        </a>
-
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- ==========================================
-       FOOTER
-       ========================================== -->
-
-  <footer class="site-footer">
-
-    <div class="container">
-
-
-      <span class="item">
-
-        RUMBO
+        </svg>
 
       </span>
 
+      RUMBO
 
-      <span
-        class="item"
-        id="footer-quote">
+    </a>
 
-      </span>
+    <nav class="main-nav">
 
+      <a href="index.html">
+        Inicio
+      </a>
 
       <a
-        class="item"
-        href="#"
-        id="logout-link">
+        href="cursos.html"
+        class="active">
 
-        Cerrar sesión
+        Cursos
+
+      </a>
+
+      <a href="practicas.html">
+        Prácticas
+      </a>
+
+      <a href="tomos.html">
+        Tomos
+      </a>
+
+    </nav>
+
+    <button
+      class="nav-toggle"
+      aria-label="Abrir menú">
+
+      ☰
+
+    </button>
+
+  </div>
+
+</header>
+
+<!-- ==========================================
+     CONTENIDO
+     ========================================== -->
+
+<main>
+
+  <section class="page-head container">
+
+    <h1>
+      Academias
+    </h1>
+
+    <h2>
+      Las contraseñas se encuentran en la página de inicio.
+    </h2>
+
+    <p>
+      Selecciona una academia para acceder a sus cursos.
+    </p>
+
+  </section>
+
+  <section
+    class="section container"
+    style="padding-top:0">
+
+    <div class="academy-grid">
+
+      <!-- ESPARTA -->
+
+      <a
+        href="esparta.html"
+        class="academy-card esparta">
+
+        <span class="academy-card-icon">
+          E
+        </span>
+
+        <span class="academy-card-title">
+          ESPARTA
+        </span>
+
+        <span class="academy-card-text">
+          Cursos y clases
+        </span>
+
+      </a>
+
+
+      <!-- KELSEN -->
+
+      <a
+        href="kelsen.html"
+        class="academy-card kelsen">
+
+        <span class="academy-card-icon">
+          K
+        </span>
+
+        <span class="academy-card-title">
+          KELSEN
+        </span>
+
+        <span class="academy-card-text">
+          Cursos y clases
+        </span>
+
+      </a>
+
+
+      <!-- BRICEÑO -->
+
+      <a
+        href="briceño.html"
+        class="academy-card briceno">
+
+        <span class="academy-card-icon">
+          B
+        </span>
+
+        <span class="academy-card-title">
+          BRICEÑO
+        </span>
+
+        <span class="academy-card-text">
+          Cursos y clases
+        </span>
 
       </a>
 
     </div>
 
-  </footer>
+  </section>
 
+</main>
 
-  <!-- ==========================================
-       NAVEGACIÓN INFERIOR
-       ========================================== -->
+<!-- ==========================================
+     FOOTER
+     ========================================== -->
 
-  <nav class="bottom-nav">
+<footer class="site-footer">
 
+  <div class="container">
 
-    <a href="index.html">
+    <span class="item">
+      RUMBO
+    </span>
 
-      Inicio
-
-    </a>
-
+    <span
+      class="item"
+      id="footer-quote">
+    </span>
 
     <a
-      href="cursos.html"
-      class="active">
+      class="item"
+      href="#"
+      id="logout-link">
 
-      Cursos
-
-    </a>
-
-
-    <a href="practicas.html">
-
-      Prácticas
+      Cerrar sesión
 
     </a>
 
+  </div>
 
-    <a href="tomos.html">
+</footer>
 
-      Tomos
+<!-- ==========================================
+     NAVEGACIÓN INFERIOR
+     ========================================== -->
 
-    </a>
+<nav class="bottom-nav">
 
+  <a href="index.html">
+    Inicio
+  </a>
 
-  </nav>
+  <a
+    href="cursos.html"
+    class="active">
 
+    Cursos
 
-  <!-- ==========================================
-       SCRIPTS
-       ========================================== -->
+  </a>
 
-  <script src="assets/frases.js"></script>
-  <script src="assets/data.js"></script>
-  <script src="assets/course-passwords.js"></script>
-  <script src="assets/app.js"></script>
+  <a href="practicas.html">
+    Prácticas
+  </a>
 
+  <a href="tomos.html">
+    Tomos
+  </a>
 
-  <!-- ==========================================
-       LOGIN DE ACADEMIAS
-       ========================================== -->
+</nav>
 
-  <script>
+<!-- ==========================================
+     SCRIPTS
+     ========================================== -->
 
-    const academyOverlay =
-      document.getElementById('academy-login-overlay');
+<script src="assets/frases.js"></script>
+<script src="assets/data.js"></script>
 
+<!-- LOGIN DESACTIVADO TEMPORALMENTE
+<script src="assets/course-passwords.js"></script>
+-->
 
-    const academyForm =
-      document.getElementById('academy-login-form');
+<script src="assets/app.js"></script>
 
 
-    const academyUser =
-      document.getElementById('academy-user');
+<!-- ==========================================
+     JAVASCRIPT DEL LOGIN DESACTIVADO
+     ========================================== -->
 
+<!--
 
-    const academyPass =
-      document.getElementById('academy-pass');
+<script>
 
+  const academyOverlay =
+    document.getElementById('academy-login-overlay');
 
-    const academyError =
-      document.getElementById('academy-login-error');
+  const academyForm =
+    document.getElementById('academy-login-form');
 
+  const academyUser =
+    document.getElementById('academy-user');
 
-    const academyTitle =
-      document.getElementById('academy-login-title');
+  const academyPass =
+    document.getElementById('academy-pass');
 
+  const academyError =
+    document.getElementById('academy-login-error');
 
-    const academyIcon =
-      document.getElementById('academy-login-icon');
+  const academyTitle =
+    document.getElementById('academy-login-title');
 
+  const academyIcon =
+    document.getElementById('academy-login-icon');
 
-    const academyClose =
-      document.getElementById('academy-login-close');
+  const academyClose =
+    document.getElementById('academy-login-close');
 
+  let selectedAcademy = null;
 
-    let selectedAcademy = null;
+  let selectedAcademyUrl = null;
 
-    let selectedAcademyUrl = null;
 
+  document
+    .querySelectorAll('.academy-card')
+    .forEach(card => {
 
-    /*
-    -------------------------------------------------
-    AL HACER CLIC EN UNA ACADEMIA
-    -------------------------------------------------
-    */
+      card.addEventListener('click', function(event) {
 
-    document
-      .querySelectorAll('.academy-card')
-      .forEach(card => {
+        event.preventDefault();
 
-        card.addEventListener('click', function(event) {
+        selectedAcademy =
+          this.dataset.academy;
 
-          event.preventDefault();
+        selectedAcademyUrl =
+          this.getAttribute('href');
 
+        academyTitle.textContent =
+          this.dataset.name;
 
-          selectedAcademy =
-            this.dataset.academy;
+        academyIcon.textContent =
+          this.dataset.icon;
 
+        academyUser.value = '';
 
-          selectedAcademyUrl =
-            this.getAttribute('href');
+        academyPass.value = '';
 
+        academyError.textContent = '';
 
-          academyTitle.textContent =
-            this.dataset.name;
+        academyOverlay.classList.add('active');
 
-
-          academyIcon.textContent =
-            this.dataset.icon;
-
-
-          /*
-          Cambiar color según academia
-          */
-
-          if (selectedAcademy === 'esparta') {
-
-            academyIcon.style.background =
-              '#E8433F';
-
-          }
-
-          else if (selectedAcademy === 'kelsen') {
-
-            academyIcon.style.background =
-              '#6B7280';
-
-          }
-
-          else if (selectedAcademy === 'briceno') {
-
-            academyIcon.style.background =
-              '#2563EB';
-
-          }
-
-
-          academyUser.value = '';
-
-          academyPass.value = '';
-
-          academyError.textContent = '';
-
-
-          academyOverlay.classList.add('active');
-
-
-          setTimeout(() => {
-
-            academyUser.focus();
-
-          }, 100);
-
-        });
+        setTimeout(() => {
+          academyUser.focus();
+        }, 100);
 
       });
 
+    });
 
-    /*
-    -------------------------------------------------
-    CERRAR LOGIN
-    -------------------------------------------------
-    */
 
-    academyClose.addEventListener('click', function() {
+  academyClose.addEventListener('click', function() {
+
+    academyOverlay.classList.remove('active');
+
+    selectedAcademy = null;
+    selectedAcademyUrl = null;
+
+  });
+
+
+  academyOverlay.addEventListener('click', function(event) {
+
+    if (event.target === academyOverlay) {
 
       academyOverlay.classList.remove('active');
 
       selectedAcademy = null;
-
       selectedAcademyUrl = null;
 
-    });
+    }
+
+  });
 
 
-    /*
-    -------------------------------------------------
-    CERRAR HACIENDO CLIC FUERA
-    -------------------------------------------------
-    */
+  academyForm.addEventListener('submit', function(event) {
 
-    academyOverlay.addEventListener('click', function(event) {
+    event.preventDefault();
 
-      if (event.target === academyOverlay) {
+    if (!selectedAcademy) {
+      return;
+    }
 
-        academyOverlay.classList.remove('active');
+    const username =
+      academyUser.value.trim();
 
-        selectedAcademy = null;
+    const password =
+      academyPass.value;
 
-        selectedAcademyUrl = null;
-
-      }
-
-    });
-
-
-    /*
-    -------------------------------------------------
-    LOGIN DE LA ACADEMIA
-    -------------------------------------------------
-    */
-
-    academyForm.addEventListener('submit', function(event) {
-
-      event.preventDefault();
-
-
-      if (!selectedAcademy) {
-
-        return;
-
-      }
-
-
-      const username =
-        academyUser.value.trim();
-
-
-      const password =
-        academyPass.value;
-
-
-      /*
-      -----------------------------------------------
-      VERIFICAR CONTRA course-passwords.js
-      -----------------------------------------------
-      */
-
-      const valid =
-        checkAcademyLogin(
-          selectedAcademy,
-          username,
-          password
-        );
-
-
-      if (!valid) {
-
-        academyError.textContent =
-          'Usuario o contraseña incorrectos.';
-
-        academyPass.value = '';
-
-        academyPass.focus();
-
-        return;
-
-      }
-
-
-      /*
-      -----------------------------------------------
-      LOGIN CORRECTO
-      -----------------------------------------------
-      */
-
-      sessionStorage.setItem(
-        'rumbo_academy',
-        selectedAcademy
+    const valid =
+      checkAcademyLogin(
+        selectedAcademy,
+        username,
+        password
       );
 
+    if (!valid) {
 
-      sessionStorage.setItem(
-        'rumbo_academy_user',
-        username
-      );
+      academyError.textContent =
+        'Usuario o contraseña incorrectos.';
 
+      academyPass.value = '';
 
-      /*
-      -----------------------------------------------
-      ABRIR ACADEMIA
-      -----------------------------------------------
-      */
+      academyPass.focus();
 
-      window.location.href =
-        selectedAcademyUrl;
+      return;
 
-    });
+    }
 
-  </script>
+    sessionStorage.setItem(
+      'rumbo_academy',
+      selectedAcademy
+    );
+
+    sessionStorage.setItem(
+      'rumbo_academy_user',
+      username
+    );
+
+    window.location.href =
+      selectedAcademyUrl;
+
+  });
+
+</script>
+
+-->
 
 </body>
 </html>
