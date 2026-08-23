@@ -2,33 +2,24 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-
-  <link
     rel="stylesheet"
-    href="assets/style.css">
+  >
+
+  <link rel="stylesheet" href="assets/style.css">
 
   <title>Briceño · RUMBO</title>
 
-
   <style>
 
-    /* =====================================================
+    /* =========================================================
        SELECTOR DE PROCESO
-    ===================================================== */
+    ========================================================= */
 
     .briceno-selector {
       display: grid;
@@ -37,17 +28,15 @@
       margin-top: 24px;
     }
 
-
     .briceno-selector-btn {
+      position: relative;
       border: 1px solid #edf0f5;
       background: #fff;
       border-radius: 15px;
-      padding: 16px;
+      padding: 18px;
       cursor: pointer;
       text-align: left;
-
       font-family: Inter, sans-serif;
-
       transition:
         background .2s ease,
         border-color .2s ease,
@@ -55,12 +44,10 @@
         box-shadow .2s ease;
     }
 
-
     .briceno-selector-btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(11,18,41,.08);
     }
-
 
     .briceno-selector-btn.active {
       background: #eef9fd;
@@ -68,13 +55,11 @@
       box-shadow: 0 5px 15px rgba(76,195,240,.15);
     }
 
-
     .briceno-selector-icon {
       display: block;
       font-size: 25px;
       margin-bottom: 7px;
     }
-
 
     .briceno-selector-title {
       display: block;
@@ -85,74 +70,228 @@
       line-height: 1.25;
     }
 
-
     .briceno-selector-subtitle {
       display: block;
-      margin-top: 4px;
+      margin-top: 5px;
       color: #667085;
       font-size: 12px;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
-
     .briceno-subtitle-aviso {
-      margin: 8px 0 0;
+      display: block;
+      margin-top: 7px;
       color: #E8433F;
       font-weight: 700;
     }
 
+    /* =========================================================
+       ESTADO DEL CICLO
+    ========================================================= */
 
-    /* =====================================================
-       CONTENEDOR DEL PROCESO ACTIVO
-    ===================================================== */
+    .briceno-ciclo-actual {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #eaf7ff;
+      border: 1px solid #bfe9fb;
+      color: #0879ad;
+      font-family: Inter, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .briceno-ciclo-finalizado {
+      background: #f4f4f5;
+      border-color: #e2e3e5;
+      color: #667085;
+    }
+
+    .briceno-ciclo-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #16b364;
+      box-shadow: 0 0 0 3px rgba(22,179,100,.12);
+    }
+
+    .briceno-ciclo-finalizado .briceno-ciclo-dot {
+      background: #98a2b3;
+      box-shadow: 0 0 0 3px rgba(152,162,179,.12);
+    }
+
+    /* =========================================================
+       CONTENEDOR DEL PROCESO
+    ========================================================= */
 
     .briceno-contenido {
       margin-top: 20px;
     }
 
-
     .briceno-proceso-info {
-      margin-bottom: 16px;
-      padding: 18px 20px;
-
+      margin-bottom: 18px;
+      padding: 20px;
       background: linear-gradient(
         135deg,
         #f8fcfe 0%,
         #ffffff 100%
       );
-
       border: 1px solid #edf0f5;
       border-radius: 16px;
     }
 
-
     .briceno-proceso-info h2 {
-      margin: 0 0 5px;
-
+      margin: 0 0 6px;
       color: #0B1229;
-
       font-family: Poppins, sans-serif;
-
       font-size: 21px;
       font-weight: 800;
     }
 
-
     .briceno-proceso-info p {
       margin: 0;
-
       color: #667085;
-
       font-family: Inter, sans-serif;
-
       font-size: 14px;
       line-height: 1.5;
     }
 
+    /* =========================================================
+       GOOGLE DRIVE
+    ========================================================= */
 
-    /* =====================================================
+    .briceno-drive-box {
+      margin-top: 17px;
+      padding: 16px 18px;
+      background: #f8fbfd;
+      border: 1px solid #e3edf2;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .briceno-drive-text {
+      color: #52606d;
+      font-family: Inter, sans-serif;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .briceno-drive-text strong {
+      display: block;
+      margin-bottom: 3px;
+      color: #0B1229;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .briceno-drive-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 145px;
+      padding: 10px 15px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #dadce0;
+      color: #1a73e8;
+      text-decoration: none;
+      font-family: Inter, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 2px 6px rgba(11,18,41,.05);
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+    }
+
+    .briceno-drive-btn:hover {
+      transform: translateY(-1px);
+      background: #f8fbff;
+      box-shadow: 0 5px 12px rgba(11,18,41,.09);
+    }
+
+    .briceno-drive-icon {
+      font-size: 18px;
+    }
+
+    /* =========================================================
+       AVISO DE APOYO
+    ========================================================= */
+
+    .briceno-apoyo {
+      margin-top: 18px;
+      padding: 17px 19px;
+      border-radius: 13px;
+      background: #fff8e8;
+      border: 1px solid #f7dfaa;
+      color: #5c4b25;
+      font-family: Inter, sans-serif;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .briceno-apoyo strong {
+      color: #8a6200;
+    }
+
+    .briceno-apoyo a {
+      font-weight: 800;
+      text-decoration: underline;
+    }
+
+    .briceno-apoyo-canal {
+      color: #0e9f6e;
+    }
+
+    .briceno-apoyo-pagina {
+      color: #0879ad;
+    }
+
+    /* =========================================================
+       AVISO BIOLOGÍA / ANATOMÍA
+    ========================================================= */
+
+    .briceno-importante {
+      margin-top: 18px;
+      padding: 19px 20px;
+      border-radius: 14px;
+      background: #eef9fd;
+      border: 1px solid #c9edf9;
+      color: #28495a;
+      font-family: Inter, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .briceno-importante strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #0879ad;
+      font-family: Poppins, sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .briceno-importante p {
+      margin: 0;
+    }
+
+    /* =========================================================
        ÁREAS
-    ===================================================== */
+    ========================================================= */
 
     .briceno-areas {
       display: flex;
@@ -160,926 +299,978 @@
       gap: 14px;
     }
 
-
     .briceno-area {
       background: #fff;
-
       border-radius: 16px;
       overflow: hidden;
-
       border: 1px solid #edf0f5;
-
-      box-shadow:
-        0 4px 14px rgba(11,18,41,.05);
+      box-shadow: 0 4px 14px rgba(11,18,41,.05);
     }
-
 
     .briceno-area-header {
       width: 100%;
-
       border: 0;
       background: #fff;
-
       padding: 18px 20px;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 15px;
-
       cursor: pointer;
-
       color: #0B1229;
-
       font-family: Poppins, sans-serif;
       font-size: 17px;
       font-weight: 800;
-
       text-align: left;
     }
-
 
     .briceno-area-header:hover {
       background: #f8fbfd;
     }
 
-
     .briceno-area-name {
       display: flex;
       align-items: center;
-
       gap: 13px;
-
       min-width: 0;
     }
-
 
     .briceno-area-name > span:last-child {
       word-break: break-word;
     }
 
-
     .briceno-area-icon {
       width: 42px;
       height: 42px;
-
       min-width: 42px;
-
       border-radius: 12px;
-
-      background: #4CC3F0;
-
+      background: #eef9fd;
       display: flex;
       align-items: center;
       justify-content: center;
-
-      font-size: 20px;
+      font-size: 22px;
     }
 
+    .briceno-area-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: auto;
+    }
+
+    /* =========================================================
+       INDICADOR DE VIDEOS
+    ========================================================= */
+
+    .briceno-video-count {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #edf7ff;
+      border: 1px solid #cfeafa;
+      color: #0879ad;
+      font-family: Inter, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .briceno-video-count-icon {
+      font-size: 11px;
+    }
+
+    .briceno-ciclo-mini {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: #16805a;
+      font-family: Inter, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .briceno-ciclo-mini-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #16b364;
+    }
 
     .briceno-arrow {
       width: 22px;
       height: 22px;
-
       min-width: 22px;
-
-      transition:
-        transform .2s ease;
+      transition: transform .2s ease;
     }
-
 
     .briceno-area.open .briceno-arrow {
       transform: rotate(180deg);
     }
 
-
-    /* =====================================================
+    /* =========================================================
        CONTENIDO ÁREA
-    ===================================================== */
+    ========================================================= */
 
     .briceno-area-content {
       display: none;
-
       padding: 0 20px 20px;
     }
-
 
     .briceno-area.open .briceno-area-content {
       display: block;
     }
 
-
-    /* =====================================================
+    /* =========================================================
        VIDEOS
-    ===================================================== */
+    ========================================================= */
 
     .briceno-video-list {
       display: flex;
-
       flex-direction: column;
-
       gap: 9px;
     }
 
-
     .briceno-video {
       display: flex;
-
       align-items: center;
       justify-content: space-between;
-
       gap: 12px;
-
       padding: 13px 15px;
-
       background: #f7f9fc;
-
       border-radius: 11px;
-
       border: 1px solid #edf0f5;
     }
 
-
     .briceno-video-name {
       display: flex;
-
       align-items: center;
-
       gap: 10px;
-
       color: #0B1229;
-
       font-family: Inter, sans-serif;
-
       font-weight: 600;
-
       font-size: 14px;
-
       line-height: 1.4;
     }
 
-
     .briceno-video-name > span:first-child {
       color: #E8433F;
-
       font-size: 13px;
     }
-
 
     .briceno-play {
       width: 35px;
       height: 35px;
-
       min-width: 35px;
-
       border-radius: 50%;
-
       background: #E8433F;
-
       color: #fff;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       text-decoration: none;
-
       font-size: 14px;
-
       transition:
         transform .2s,
         background .2s;
     }
 
-
     .briceno-play:hover {
       transform: scale(1.08);
-
       background: #d93632;
     }
 
-
     .briceno-empty {
       color: #667085;
-
       font-size: 14px;
-
       padding: 10px 0;
     }
 
-
-    /* =====================================================
-       AVISO
-    ===================================================== */
+    /* =========================================================
+       AVISO GENERAL
+    ========================================================= */
 
     .briceno-notice {
       display: flex;
-
       align-items: flex-start;
-
       gap: 12px;
-
       margin-top: 20px;
-
       padding: 15px 17px;
-
       border-radius: 12px;
-
       background: #eef9fd;
-
       color: #345;
-
       font-size: 13px;
-
       line-height: 1.5;
     }
 
-
     .briceno-notice svg {
       width: 20px;
-
       min-width: 20px;
-
       color: #159bc9;
-
       margin-top: 1px;
     }
-
 
     .briceno-notice p {
       margin: 0;
     }
 
-
-    /* =====================================================
+    /* =========================================================
        MÓVIL
-    ===================================================== */
+    ========================================================= */
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
 
       .briceno-selector {
         grid-template-columns: 1fr;
       }
 
-
       .briceno-selector-btn {
-        padding: 14px;
+        padding: 16px;
+        padding-top: 48px;
       }
 
+      .briceno-ciclo-actual {
+        top: 12px;
+        right: 12px;
+      }
+
+      .briceno-drive-box {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .briceno-drive-btn {
+        width: 100%;
+      }
 
       .briceno-area-header {
         padding: 15px;
-
-        font-size: 15px;
       }
-
 
       .briceno-area-content {
         padding: 0 15px 15px;
       }
 
-
       .briceno-area-icon {
         width: 38px;
         height: 38px;
-
         min-width: 38px;
-
-        font-size: 18px;
       }
 
+      .briceno-area-right {
+        gap: 7px;
+      }
+
+      .briceno-ciclo-mini {
+        display: none;
+      }
+
+      .briceno-video-count {
+        font-size: 11px;
+        padding: 5px 8px;
+      }
 
       .briceno-video {
         padding: 11px 12px;
       }
 
-
       .briceno-video-name {
         font-size: 13px;
       }
 
+      .briceno-importante {
+        font-size: 14px;
+      }
     }
 
   </style>
-
 </head>
-
 
 <body>
 
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+  <header class="site-header">
 
-<header class="site-header">
+    <div class="container">
 
-  <div class="container">
+      <a href="index.html" class="brand">
 
-    <a
-      href="index.html"
-      class="brand">
+        <span class="logo-box">
 
-      <span class="logo-box">
+          <img
+            class="logo-mark"
+            src="assets/LOGOR.png"
+            alt="RUMBO"
+            onerror="
+              this.style.display='none';
+              this.nextElementSibling.style.display='inline-flex'
+            "
+          >
 
-        <img
-          class="logo-mark"
-          src="assets/LOGOR.png"
-          alt="RUMBO"
-          onerror="
-            this.style.display='none';
-            this.nextElementSibling.style.display='inline-flex'
-          "
-        >
+          <svg
+            class="logo-fallback"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="18" cy="24" r="14" fill="#4CC3F0"/>
+            <circle cx="16" cy="19" r="2.2" fill="#0B1229"/>
+            <path d="M8 24 L2 20 L8 28 Z" fill="#4CC3F0"/>
+            <text
+              x="21"
+              y="34"
+              font-family="Poppins, sans-serif"
+              font-weight="800"
+              font-size="30"
+              fill="#E8433F"
+            >R</text>
+          </svg>
+
+        </span>
+
+        RUMBO
+
+      </a>
+
+      <nav class="main-nav">
+
+        <a href="index.html">
+          Inicio
+        </a>
+
+        <a href="cursos.html" class="active">
+          Cursos
+        </a>
+
+        <a href="practicas.html">
+          Prácticas
+        </a>
+
+        <a href="tomos.html">
+          Tomos
+        </a>
+
+      </nav>
+
+      <button
+        class="nav-toggle"
+        aria-label="Abrir menú"
+        type="button"
+      >
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       CONTENIDO
+  ====================================================== -->
+
+  <main>
+
+    <div class="container">
+
+      <!-- FRASE -->
+
+      <p class="course-quote">
 
         <svg
-          class="logo-fallback"
-          viewBox="0 0 48 48"
+          viewBox="0 0 24 24"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg">
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+        </svg>
 
-          <circle
-            cx="18"
-            cy="24"
-            r="14"
-            fill="#4CC3F0"/>
+        <span id="course-quote-text">
+          Aprende, practica y avanza.
+        </span>
 
-          <circle
-            cx="16"
-            cy="19"
-            r="2.2"
-            fill="#0B1229"/>
+      </p>
 
-          <path
-            d="M8 24 L2 20 L8 28 Z"
-            fill="#4CC3F0"/>
 
-          <text
-            x="21"
-            y="34"
-            font-family="Poppins, sans-serif"
-            font-weight="800"
-            font-size="30"
-            fill="#E8433F">
-            R
-          </text>
+      <!-- BREADCRUMB -->
+
+      <nav class="breadcrumb">
+
+        <a href="cursos.html">
+          Cursos
+        </a>
+
+        <span>›</span>
+
+        <span>
+          Briceño
+        </span>
+
+      </nav>
+
+
+      <!-- CABECERA -->
+
+      <div class="course-head">
+
+        <div class="emoji-badge">
+          🎓
+        </div>
+
+        <div>
+
+          <h1>
+            BRICEÑO
+          </h1>
+
+          <h5>
+
+            Si Rumbo te está siendo útil, te agradeceríamos mucho que puedas
+
+            <a
+              href="https://whatsapp.com/channel/0029VbDFAEu7YScyVZBNul0X"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="
+                color:#0E9F6E;
+                font-weight:700;
+                text-decoration:underline;
+              "
+            >
+              seguir el canal
+            </a>.
+
+            Cada persona que se une nos demuestra que vale la pena continuar.
+
+            <strong style="color:red;">
+              De no contar con suficiente apoyo, no estaremos subiendo clases
+              de los próximos procesos.
+            </strong>
+
+          </h5>
+
+          <p>
+            Selecciona el proceso que deseas revisar.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           BOTONES DE LOS DOS PROCESOS
+      ================================================== -->
+
+      <div class="briceno-selector">
+
+        <!-- 2026 -->
+
+        <button
+          type="button"
+          class="briceno-selector-btn active"
+          data-proceso="2026"
+        >
+
+          <span class="briceno-ciclo-actual briceno-ciclo-finalizado">
+
+            <span class="briceno-ciclo-dot"></span>
+
+            Ciclo finalizado
+
+          </span>
+
+          <span class="briceno-selector-icon">
+            🎓
+          </span>
+
+          <span class="briceno-selector-title">
+            BRICEÑO 2026
+          </span>
+
+          <span class="briceno-selector-subtitle">
+
+            Proceso Intensivo 2026, lamentablemente aquí no hay
+            un orden. Es lo que se pudo recuperar y pedimos disculpas.
+
+          </span>
+
+        </button>
+
+
+        <!-- 2027 -->
+
+        <button
+          type="button"
+          class="briceno-selector-btn"
+          data-proceso="2027"
+        >
+
+          <span class="briceno-ciclo-actual">
+
+            <span class="briceno-ciclo-dot"></span>
+
+            Ciclo en curso
+
+          </span>
+
+          <span class="briceno-selector-icon">
+            📚
+          </span>
+
+          <span class="briceno-selector-title">
+            BRICEÑO 2027
+          </span>
+
+          <span class="briceno-selector-subtitle">
+
+            II Fase CEPREUNSA / Ordinario / CEPREQUINTOS
+
+            <span class="briceno-subtitle-aviso">
+
+              Este proceso lo estaremos subiendo las grabaciones
+              semana con semana.
+
+            </span>
+
+          </span>
+
+        </button>
+
+      </div>
+
+
+      <!-- =================================================
+           AVISO DE APOYO
+      ================================================== -->
+
+      <div class="briceno-apoyo">
+
+        <strong>
+          💙 Ayúdanos a seguir compartiendo contenido
+        </strong>
+
+        <br>
+
+        Si este contenido te está siendo útil, te agradeceríamos mucho que
+
+        <a
+          class="briceno-apoyo-canal"
+          href="https://whatsapp.com/channel/0029VbDFAEu7YScyVZBNul0X"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          sigas nuestro canal
+        </a>
+
+        y que
+
+        <a
+          class="briceno-apoyo-pagina"
+          href="index.html"
+        >
+          compartas la página
+        </a>
+
+        con otros estudiantes.
+
+      </div>
+
+
+      <!-- =================================================
+           AVISO
+      ================================================== -->
+
+      <div class="briceno-notice">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 16v-4"/>
+          <path d="M12 8h.01"/>
 
         </svg>
 
-      </span>
+        <p id="briceno-aviso">
 
-      RUMBO
+          Estás viendo el Proceso Intensivo 2026.
+          Selecciona un área para ver sus clases.
 
-    </a>
+        </p>
 
-
-    <nav class="main-nav">
-
-      <a href="index.html">
-        Inicio
-      </a>
-
-      <a
-        href="cursos.html"
-        class="active">
-        Cursos
-      </a>
-
-      <a href="practicas.html">
-        Prácticas
-      </a>
-
-      <a href="tomos.html">
-        Tomos
-      </a>
-
-    </nav>
-
-
-    <button
-      class="nav-toggle"
-      aria-label="Abrir menú"
-      type="button">
-
-      ☰
-
-    </button>
-
-  </div>
-
-</header>
-
-
-<!-- =====================================================
-     CONTENIDO
-===================================================== -->
-
-<main>
-
-  <div class="container">
-
-
-    <!-- FRASE -->
-
-    <p class="course-quote">
-
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round">
-
-        <path
-          d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
-
-      </svg>
-
-      <span id="course-quote-text">
-        Aprende, practica y avanza.
-      </span>
-
-    </p>
-
-
-    <!-- BREADCRUMB -->
-
-    <nav class="breadcrumb">
-
-      <a href="cursos.html">
-        Cursos
-      </a>
-
-      <span>›</span>
-
-      <span>
-        Briceño
-      </span>
-
-    </nav>
-
-
-    <!-- CABECERA -->
-
-    <div class="course-head">
-
-      <div class="emoji-badge">
-        🎓
-      </div>
-
-      <div>
-
-        <h1>
-          BRICEÑO
-        </h1>
- 
-<h5>
-  Si Rumbo te está siendo útil, te agradeceríamos mucho que puedas
-  <a
-    href="https://whatsapp.com/channel/0029VbDFAEu7YScyVZBNul0X"
-    target="_blank"
-    rel="noopener noreferrer"
-    style="color: #0E9F6E; font-weight: 700; text-decoration: underline;"
-  >seguir el canal</a>.
-  Cada persona que se une nos demuestra que vale la pena continuar.
-  <strong style="color: red;">
-    De no contar con suficiente apoyo, no estaremos subiendo clases de los
-    próximos procesos.
-  </strong>
-</h5>
-
-<p>
-  Selecciona el proceso que deseas revisar.
-</p>
       </div>
 
     </div>
 
 
     <!-- =================================================
-         BOTONES DE LOS DOS PROCESOS
+         CONTENIDO DEL PROCESO
     ================================================== -->
 
-    <div class="briceno-selector">
+    <section
+      class="container section"
+      style="padding-top:20px"
+    >
 
-      <button
-        type="button"
-        class="briceno-selector-btn active"
-        data-proceso="2026">
+      <div
+        id="briceno-contenido"
+        class="briceno-contenido"
+      ></div>
 
-        <span class="briceno-selector-icon">
-          🎓
-        </span>
+    </section>
 
-        <span class="briceno-selector-title">
-          BRICEÑO 2026
-        </span>
-
-        <span class="briceno-selector-subtitle">
-          Proceso Intensivo 2026, lamentablemente aquí no hay
-          un orden. Es lo que se pudo recuperar y pedimos disculpas.
-        </span>
-
-      </button>
+  </main>
 
 
-      <button
-        type="button"
-        class="briceno-selector-btn"
-        data-proceso="2027">
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
 
-        <span class="briceno-selector-icon">
-          📚
-        </span>
+  <footer class="site-footer">
 
-        <span class="briceno-selector-title">
-          BRICEÑO 2027
-        </span>
+    <div class="container">
 
-        <span class="briceno-selector-subtitle">
-          II Fase Ordinario / CEPREUNSA
+      <span class="item">
 
-          <span class="briceno-subtitle-aviso">
-            Este proceso lo estaremos subiendo las grabaciones
-            semana con semana.
-          </span>
+        <span
+          class="logo-box"
+          style="width:22px;height:22px"
+        >
+
+          <img
+            class="logo-mark"
+            style="
+              width:22px;
+              height:22px;
+              border-radius:5px
+            "
+            src="assets/LOGOR.png"
+            alt="RUMBO"
+          >
 
         </span>
 
-      </button>
-
-    </div>
-
-
-    <!-- AVISO -->
-
-    <div class="briceno-notice">
-
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round">
-
-        <circle
-          cx="12"
-          cy="12"
-          r="10"/>
-
-        <path
-          d="M12 16v-4"/>
-
-        <path
-          d="M12 8h.01"/>
-
-      </svg>
-
-      <p id="briceno-aviso">
-
-        Estás viendo el Proceso Intensivo 2026.
-        Selecciona un área para ver sus clases.
-
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <!-- =================================================
-       CONTENIDO DEL PROCESO
-  ================================================== -->
-
-  <section
-    class="container section"
-    style="padding-top:20px">
-
-    <div
-      id="briceno-contenido"
-      class="briceno-contenido">
-
-    </div>
-
-  </section>
-
-</main>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="site-footer">
-
-  <div class="container">
-
-    <span class="item">
-
-      <span
-        class="logo-box"
-        style="width:22px;height:22px">
-
-        <img
-          class="logo-mark"
-          style="
-            width:22px;
-            height:22px;
-            border-radius:5px
-          "
-          src="assets/LOGOR.png"
-          alt="RUMBO">
+        RUMBO
 
       </span>
 
-      RUMBO
 
-    </span>
-
-
-    <span
-      class="item"
-      id="footer-quote">
-
-      BRICEÑO
-
-    </span>
+      <span
+        class="item"
+        id="footer-quote"
+      >
+        BRICEÑO
+      </span>
 
 
-    <span class="item">
-      Contenido educativo
-    </span>
+      <span class="item">
+        Contenido educativo
+      </span>
 
-  </div>
+    </div>
 
-</footer>
-
-
-<!-- =====================================================
-     BOTTOM NAV
-===================================================== -->
-
-<nav class="bottom-nav">
-
-  <a href="index.html">
-    Inicio
-  </a>
-
-  <a
-    href="cursos.html"
-    class="active">
-    Cursos
-  </a>
-
-  <a href="practicas.html">
-    Prácticas
-  </a>
-
-  <a href="tomos.html">
-    Tomos
-  </a>
-
-</nav>
+  </footer>
 
 
-<!-- =====================================================
-     SCRIPTS
-===================================================== -->
+  <!-- =====================================================
+       BOTTOM NAV
+  ====================================================== -->
 
-<script src="assets/frases.js"></script>
+  <nav class="bottom-nav">
 
-<script src="assets/data.js"></script>
+    <a href="index.html">
+      Inicio
+    </a>
 
+    <a
+      href="cursos.html"
+      class="active"
+    >
+      Cursos
+    </a>
 
-<script>
+    <a href="practicas.html">
+      Prácticas
+    </a>
 
-document.addEventListener(
-  "DOMContentLoaded",
-  function () {
+    <a href="tomos.html">
+      Tomos
+    </a>
 
-
-    /* ===================================================
-       ELEMENTOS
-    =================================================== */
-
-    const contenedor =
-      document.getElementById(
-        "briceno-contenido"
-      );
-
-
-    const botones =
-      document.querySelectorAll(
-        ".briceno-selector-btn"
-      );
+  </nav>
 
 
-    const aviso =
-      document.getElementById(
-        "briceno-aviso"
-      );
+  <!-- =====================================================
+       SCRIPTS
+  ====================================================== -->
+
+  <script src="assets/frases.js"></script>
+
+  <!-- Datos del proceso 2026 -->
+  <script src="assets/data.js"></script>
+
+  <!-- IMPORTANTE:
+       ESTE ES EL ARCHIVO QUE CONTIENE:
+       window.briceno2027Areas
+  -->
+  <script src="assets/briceñoareas2027.js"></script>
 
 
-    /* ===================================================
-       DATOS
-    =================================================== */
+  <script>
 
-    const procesos = {
+    document.addEventListener("DOMContentLoaded", function () {
 
-      "2026": {
+      /* ===================================================
+         ELEMENTOS
+      =================================================== */
 
-        titulo:
-          "PROCESO INTENSIVO 2026",
+      const contenedor =
+        document.getElementById("briceno-contenido");
 
-        descripcion:
-          "Clases y contenidos correspondientes al proceso intensivo 2026.",
+      const botones =
+        document.querySelectorAll(".briceno-selector-btn");
 
-        areas:
-          window.bricenoAreas || []
-
-      },
+      const aviso =
+        document.getElementById("briceno-aviso");
 
 
-      "2027": {
+      /* ===================================================
+         DATOS
+      =================================================== */
 
-        titulo:
-          "II FASE ORDINARIO / CEPREUNSA",
+      const procesos = {
 
-        descripcion:
-          "Clases y contenidos correspondientes a la II Fase Ordinario / CEPREUNSA 2027.",
+        "2026": {
 
-        areas:
-          window.briceno2027Areas || []
+          titulo:
+            "PROCESO INTENSIVO 2026",
+
+          descripcion:
+            "Clases y contenidos correspondientes al proceso intensivo 2026.",
+
+          areas:
+            Array.isArray(window.bricenoAreas)
+              ? window.bricenoAreas
+              : []
+
+        },
+
+        "2027": {
+
+          titulo:
+            "II FASE CEPREUNSA / ORDINARIO / CEPREQUINTOS",
+
+          descripcion:
+            "Clases y contenidos correspondientes a la II Fase CEPREUNSA / Ordinario / CEPREQUINTOS 2027.",
+
+          areas:
+            Array.isArray(window.briceno2027Areas)
+              ? window.briceno2027Areas
+              : []
+
+        }
+
+      };
+
+
+      /* ===================================================
+         ICONOS
+      =================================================== */
+
+      function obtenerIcono(nombre) {
+
+        const n =
+          String(nombre).toLowerCase();
+
+        if (
+          n.includes("biolog") ||
+          n.includes("anatom")
+        )
+          return "🧬";
+
+        if (n.includes("matem"))
+          return "📐";
+
+        if (
+          n.includes("física") ||
+          n.includes("fisica")
+        )
+          return "⚛️";
+
+        if (
+          n.includes("quím") ||
+          n.includes("quim")
+        )
+          return "🧪";
+
+        if (n.includes("hist"))
+          return "🏛️";
+
+        if (n.includes("leng"))
+          return "📖";
+
+        if (n.includes("verbal"))
+          return "🗣️";
+
+        if (n.includes("filos"))
+          return "💭";
+
+        if (n.includes("ingl"))
+          return "🇬🇧";
+
+        if (n.includes("psico"))
+          return "🧠";
+
+        if (n.includes("geograf"))
+          return "🌎";
+
+        if (
+          n.includes("cív") ||
+          n.includes("civ")
+        )
+          return "⚖️";
+
+        return "📚";
+      }
+
+
+      /* ===================================================
+         ESCAPAR HTML
+         Evita que un nombre del array rompa el HTML.
+      =================================================== */
+
+      function escaparHTML(valor) {
+
+        return String(valor ?? "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
 
       }
 
-    };
+
+      /* ===================================================
+         CREAR ÁREA
+      =================================================== */
+
+      function crearArea(area, index, idProceso) {
+
+        const nombre =
+          area.nombre ||
+          area.area ||
+          area.titulo ||
+          "Área " + (index + 1);
 
 
-    /* ===================================================
-       ICONOS
-    =================================================== */
-
-    function obtenerIcono(nombre) {
-
-      const n =
-        String(nombre)
-          .toLowerCase();
+        const videos =
+          Array.isArray(area.videos)
+            ? area.videos
+            : [];
 
 
-      if (n.includes("matem"))
-        return "📐";
+        const bloque =
+          document.createElement("div");
+
+        bloque.className =
+          "briceno-area";
 
 
-      if (
-        n.includes("física") ||
-        n.includes("fisica")
-      )
-        return "⚛️";
+        /* =================================================
+           VIDEOS
+        ================================================= */
+
+        let listaVideos = "";
 
 
-      if (n.includes("biolog"))
-        return "🧬";
+        if (videos.length) {
 
-
-      if (
-        n.includes("quím") ||
-        n.includes("quim")
-      )
-        return "🧪";
-
-
-      if (n.includes("hist"))
-        return "🏛️";
-
-
-      if (n.includes("leng"))
-        return "📖";
-
-
-      if (n.includes("verbal"))
-        return "🗣️";
-
-
-      if (n.includes("filos"))
-        return "💭";
-
-
-      if (n.includes("ingl"))
-        return "🇬🇧";
-
-
-      if (n.includes("psico"))
-        return "🧠";
-
-
-      if (n.includes("geograf"))
-        return "🌎";
-
-
-      if (
-        n.includes("cív") ||
-        n.includes("civ")
-      )
-        return "⚖️";
-
-
-      return "📚";
-
-    }
-
-
-    /* ===================================================
-       CREAR ÁREA
-    =================================================== */
-
-    function crearArea(
-      area,
-      index
-    ) {
-
-
-      const nombre =
-        area.nombre ||
-        area.area ||
-        area.titulo ||
-        "Área " + (index + 1);
-
-
-      const videos =
-        Array.isArray(area.videos)
-          ? area.videos
-          : [];
-
-
-      const bloque =
-        document.createElement(
-          "div"
-        );
-
-
-      bloque.className =
-        "briceno-area";
-
-
-      let listaVideos = "";
-
-
-      /* =================================================
-         VIDEOS
-      ================================================= */
-
-      if (videos.length) {
-
-        listaVideos =
-          videos
-            .map(
-              function (
-                video,
-                i
-              ) {
-
+          listaVideos =
+            videos
+              .map(function (video, i) {
 
                 let url = "";
+                let nombreVideo = "";
 
-                let nombreVideo =
-                  "Video " +
-                  (i + 1);
 
+                /*
+                 * 2026:
+                 * Se mantiene Video 1, Video 2...
+                 *
+                 * 2027:
+                 * Se toma EXACTAMENTE video.nombre
+                 * del archivo briceñoareas2027.js
+                 */
 
                 if (
-                  typeof video ===
-                  "string"
+                  typeof video === "string"
                 ) {
 
                   url = video;
+
+                  nombreVideo =
+                    idProceso === "2027"
+                      ? "Video " + (i + 1)
+                      : "Video " + (i + 1);
 
                 }
 
                 else if (
                   video &&
-                  typeof video ===
-                  "object"
+                  typeof video === "object"
                 ) {
 
                   url =
-                    video.url ||
-                    "";
+                    video.url || "";
 
-                  nombreVideo =
-                    video.nombre ||
-                    video.titulo ||
-                    "Video " +
-                    (i + 1);
+
+                  if (idProceso === "2027") {
+
+                    /*
+                     * AQUÍ ESTÁ LA CLAVE:
+                     * NO se genera "Video 1".
+                     * Se usa video.nombre del ARRAY.
+                     */
+
+                    nombreVideo =
+                      video.nombre ||
+                      video.titulo ||
+                      "Video " + (i + 1);
+
+                  }
+
+                  else {
+
+                    /*
+                     * 2026 SIEMPRE:
+                     * Video 1, Video 2, Video 3...
+                     */
+
+                    nombreVideo =
+                      "Video " + (i + 1);
+
+                  }
 
                 }
 
 
                 return `
-
                   <div class="briceno-video">
 
                     <div class="briceno-video-name">
@@ -1089,7 +1280,7 @@ document.addEventListener(
                       </span>
 
                       <span>
-                        ${nombreVideo}
+                        ${escaparHTML(nombreVideo)}
                       </span>
 
                     </div>
@@ -1097,356 +1288,490 @@ document.addEventListener(
 
                     <a
                       class="briceno-play"
-                      href="${url}"
+                      href="${escaparHTML(url)}"
                       target="_blank"
                       rel="noopener noreferrer"
-                      title="Ver ${nombreVideo}">
-
+                      title="Ver ${escaparHTML(nombreVideo)}"
+                    >
                       ▶
-
                     </a>
 
                   </div>
-
                 `;
 
+              })
+              .join("");
+
+        }
+
+        else {
+
+          listaVideos = `
+            <div class="briceno-empty">
+              No hay videos agregados todavía.
+            </div>
+          `;
+
+        }
+
+
+        /* =================================================
+           HTML DEL ÁREA
+        ================================================= */
+
+        bloque.innerHTML = `
+
+          <button
+            type="button"
+            class="briceno-area-header"
+          >
+
+            <span class="briceno-area-name">
+
+              <span class="briceno-area-icon">
+                ${obtenerIcono(nombre)}
+              </span>
+
+              <span>
+                ${escaparHTML(nombre)}
+              </span>
+
+            </span>
+
+
+            <span class="briceno-area-right">
+
+              <span class="briceno-video-count">
+
+                <span class="briceno-video-count-icon">
+                  ▶
+                </span>
+
+                ${videos.length}
+
+                ${videos.length === 1
+                  ? "video"
+                  : "videos"}
+
+              </span>
+
+
+              ${
+                idProceso === "2027"
+                  ? `
+                    <span class="briceno-ciclo-mini">
+
+                      <span class="briceno-ciclo-mini-dot"></span>
+
+                      Ciclo en curso
+
+                    </span>
+                  `
+                  : ""
               }
-            )
-            .join("");
 
-      }
 
-      else {
+              <svg
+                class="briceno-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
 
-        listaVideos = `
+            </span>
 
-          <div class="briceno-empty">
+          </button>
 
-            No hay videos agregados todavía.
+
+          <div class="briceno-area-content">
+
+            <div class="briceno-video-list">
+
+              ${listaVideos}
+
+            </div>
 
           </div>
 
         `;
 
-      }
 
+        /* =================================================
+           ACORDEÓN
+        ================================================= */
 
-      /* =================================================
-         HTML
-      ================================================== */
-
-      bloque.innerHTML = `
-
-        <button
-          type="button"
-          class="briceno-area-header">
-
-          <span class="briceno-area-name">
-
-            <span class="briceno-area-icon">
-
-              ${obtenerIcono(nombre)}
-
-            </span>
-
-            <span>
-              ${nombre}
-            </span>
-
-          </span>
-
-
-          <svg
-            class="briceno-arrow"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round">
-
-            <path
-              d="M6 9l6 6 6-6"/>
-
-          </svg>
-
-        </button>
-
-
-        <div class="briceno-area-content">
-
-          <div class="briceno-video-list">
-
-            ${listaVideos}
-
-          </div>
-
-        </div>
-
-      `;
-
-
-      /* =================================================
-         ACORDEÓN
-      ================================================== */
-
-      const boton =
-        bloque.querySelector(
-          ".briceno-area-header"
-        );
-
-
-      boton.addEventListener(
-        "click",
-        function () {
-
-          bloque.classList.toggle(
-            "open"
+        const boton =
+          bloque.querySelector(
+            ".briceno-area-header"
           );
 
-        }
-      );
-
-
-      return bloque;
-
-    }
-
-
-    /* ===================================================
-       MOSTRAR PROCESO
-    =================================================== */
-
-    function mostrarProceso(id) {
-
-
-      const proceso =
-        procesos[id];
-
-
-      if (!proceso) {
-        return;
-      }
-
-
-      contenedor.innerHTML = "";
-
-
-      /* INFORMACIÓN */
-
-      const info =
-        document.createElement(
-          "div"
-        );
-
-
-      info.className =
-        "briceno-proceso-info";
-
-
-      info.innerHTML = `
-
-        <h2>
-          ${proceso.titulo}
-        </h2>
-
-        <p>
-          ${proceso.descripcion}
-        </p>
-
-      `;
-
-
-      contenedor.appendChild(
-        info
-      );
-
-
-      /* ÁREAS */
-
-      const areas =
-        document.createElement(
-          "div"
-        );
-
-
-      areas.className =
-        "briceno-areas";
-
-
-      if (
-        !Array.isArray(
-          proceso.areas
-        ) ||
-        !proceso.areas.length
-      ) {
-
-
-        areas.innerHTML = `
-
-          <div class="briceno-empty">
-
-            No hay áreas agregadas todavía.
-
-          </div>
-
-        `;
-
-      }
-
-      else {
-
-
-        proceso.areas.forEach(
-          function (
-            area,
-            index
-          ) {
-
-            areas.appendChild(
-              crearArea(
-                area,
-                index
-              )
-            );
-
-          }
-        );
-
-      }
-
-
-      contenedor.appendChild(
-        areas
-      );
-
-
-      /* AVISO */
-
-      if (id === "2026") {
-
-        aviso.textContent =
-          "Estás viendo el Proceso Intensivo 2026. Selecciona un área para ver sus clases.";
-
-      }
-
-      else {
-
-        aviso.textContent =
-          "Estás viendo la II Fase Ordinario / CEPREUNSA 2027. Selecciona un área para ver sus clases.";
-
-      }
-
-
-      /* BOTONES */
-
-      botones.forEach(
-        function (boton) {
-
-          boton.classList.toggle(
-            "active",
-            boton.dataset.proceso === id
-          );
-
-        }
-      );
-
-    }
-
-
-    /* ===================================================
-       EVENTOS
-    =================================================== */
-
-    botones.forEach(
-      function (boton) {
 
         boton.addEventListener(
           "click",
           function () {
 
-            mostrarProceso(
-              boton.dataset.proceso
+            bloque.classList.toggle(
+              "open"
+            );
+
+          }
+        );
+
+
+        return bloque;
+
+      }
+
+
+      /* ===================================================
+         MOSTRAR PROCESO
+      =================================================== */
+
+      function mostrarProceso(id) {
+
+        const proceso =
+          procesos[id];
+
+
+        if (!proceso) {
+          return;
+        }
+
+
+        contenedor.innerHTML = "";
+
+
+        /* =================================================
+           INFORMACIÓN
+        ================================================= */
+
+        const info =
+          document.createElement("div");
+
+
+        info.className =
+          "briceno-proceso-info";
+
+
+        info.innerHTML = `
+
+          <h2>
+            ${escaparHTML(proceso.titulo)}
+          </h2>
+
+          <p>
+            ${escaparHTML(proceso.descripcion)}
+          </p>
+
+        `;
+
+
+        /* =================================================
+           GOOGLE DRIVE SOLO PARA 2027
+        ================================================= */
+
+        if (id === "2027") {
+
+          const drive =
+            document.createElement("div");
+
+
+          drive.className =
+            "briceno-drive-box";
+
+
+          drive.innerHTML = `
+
+            <div class="briceno-drive-text">
+
+              <strong>
+                📁 Archivos compartidos en clase
+              </strong>
+
+              Aquí están todos los archivos compartidos
+              y utilizados durante las clases.
+
+            </div>
+
+
+            <a
+              class="briceno-drive-btn"
+              href="https://drive.google.com/drive/folders/1sGaLVsVGtWeggLUWtw_vB14iwH3mHHH1?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <span class="briceno-drive-icon">
+                📂
+              </span>
+
+              Abrir Google Drive
+
+            </a>
+
+          `;
+
+
+          info.appendChild(drive);
+
+        }
+
+
+        /* =================================================
+           AVISO ESPECIAL BIOLOGÍA / ANATOMÍA
+        ================================================= */
+
+        if (id === "2027") {
+
+          const importante =
+            document.createElement("div");
+
+
+          importante.className =
+            "briceno-importante";
+
+
+          importante.innerHTML = `
+
+            <strong>
+              📢 IMPORTANTE: ANATOMÍA se encuntra en BIOLOGÍA  
+            </strong>
+
+            <p>
+
+              Las clases se suben constantemente.
+              Recuerda revisar periódicamente esta sección,
+              ya que iremos agregando nuevas grabaciones
+              conforme avance el ciclo.
+
+            </p>
+
+          `;
+
+
+          info.appendChild(importante);
+
+        }
+
+
+        contenedor.appendChild(info);
+
+
+        /* =================================================
+           ÁREAS
+        ================================================= */
+
+        const areas =
+          document.createElement("div");
+
+
+        areas.className =
+          "briceno-areas";
+
+
+        if (
+          !Array.isArray(proceso.areas) ||
+          !proceso.areas.length
+        ) {
+
+          areas.innerHTML = `
+
+            <div class="briceno-empty">
+
+              No hay áreas agregadas todavía.
+
+            </div>
+
+          `;
+
+        }
+
+        else {
+
+          proceso.areas.forEach(
+            function (area, index) {
+
+              areas.appendChild(
+                crearArea(
+                  area,
+                  index,
+                  id
+                )
+              );
+
+            }
+          );
+
+        }
+
+
+        contenedor.appendChild(areas);
+
+
+        /* =================================================
+           AVISO SUPERIOR
+        ================================================= */
+
+        if (id === "2026") {
+
+          aviso.textContent =
+            "Estás viendo el Proceso Intensivo 2026. Selecciona un área para ver sus clases.";
+
+        }
+
+        else {
+
+          aviso.textContent =
+            "Estás viendo la II Fase CEPREUNSA / Ordinario / CEPREQUINTOS 2027. Selecciona un área para ver sus clases.";
+
+        }
+
+
+        /* =================================================
+           BOTONES
+        ================================================= */
+
+        botones.forEach(
+          function (boton) {
+
+            boton.classList.toggle(
+              "active",
+              boton.dataset.proceso === id
             );
 
           }
         );
 
       }
-    );
 
 
-    /* ===================================================
-       2026 POR DEFECTO
-    =================================================== */
+      /* ===================================================
+         EVENTOS
+      =================================================== */
 
-    mostrarProceso(
-      "2026"
-    );
+      botones.forEach(
+        function (boton) {
 
+          boton.addEventListener(
+            "click",
+            function () {
 
-    /* ===================================================
-       MENÚ MÓVIL
-    =================================================== */
+              mostrarProceso(
+                boton.dataset.proceso
+              );
 
-    const navToggle =
-      document.querySelector(
-        ".nav-toggle"
-      );
-
-
-    const nav =
-      document.querySelector(
-        ".main-nav"
-      );
-
-
-    if (
-      navToggle &&
-      nav
-    ) {
-
-      navToggle.addEventListener(
-        "click",
-        function () {
-
-          nav.classList.toggle(
-            "open"
+            }
           );
 
         }
       );
 
-    }
+
+      /* ===================================================
+         2026 POR DEFECTO
+      =================================================== */
+
+      mostrarProceso("2026");
 
 
-    /* ===================================================
-       FRASE
-    =================================================== */
+      /* ===================================================
+         MENÚ MÓVIL
+      =================================================== */
 
-    if (
-      typeof window.obtenerFrase ===
-      "function"
-    ) {
-
-      const quote =
-        document.getElementById(
-          "course-quote-text"
+      const navToggle =
+        document.querySelector(
+          ".nav-toggle"
         );
 
-      if (quote) {
-        quote.textContent =
-          window.obtenerFrase();
+
+      const nav =
+        document.querySelector(
+          ".main-nav"
+        );
+
+
+      if (
+        navToggle &&
+        nav
+      ) {
+
+        navToggle.addEventListener(
+          "click",
+          function () {
+
+            nav.classList.toggle(
+              "open"
+            );
+
+          }
+        );
+
       }
 
-    }
 
-  }
-);
+      /* ===================================================
+         FRASE
+      =================================================== */
 
-</script>
+      if (
+        typeof window.obtenerFrase ===
+        "function"
+      ) {
 
+        const quote =
+          document.getElementById(
+            "course-quote-text"
+          );
+
+
+        if (quote) {
+
+          quote.textContent =
+            window.obtenerFrase();
+
+        }
+
+      }
+
+
+      /* ===================================================
+         DIAGNÓSTICO 2027
+      =================================================== */
+
+      console.log(
+        "briceno2027Areas:",
+        window.briceno2027Areas
+      );
+
+
+      if (
+        !Array.isArray(
+          window.briceno2027Areas
+        )
+      ) {
+
+        console.error(
+          "ERROR: No se pudo cargar assets/briceñoareas2027.js"
+        );
+
+      }
+      else {
+
+        console.log(
+          "Áreas 2027 cargadas:",
+          window.briceno2027Areas.length
+        );
+
+      }
+
+    });
+
+  </script>
 
 </body>
-
 </html>

@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -23,7 +22,6 @@
   >
 
   <title>Inicio · RUMBO</title>
-
 
   <style>
 
@@ -47,13 +45,9 @@
     .rumbo-message {
       max-width: 850px;
       margin: 0 auto;
-
       font-family: 'Inter', sans-serif;
-
       font-size: clamp(19px, 2.1vw, 23px);
-
       line-height: 1.9;
-
       letter-spacing: .1px;
     }
 
@@ -63,20 +57,13 @@
 
     .rumbo-message p:first-of-type::first-letter {
       font-family: 'Poppins', sans-serif;
-
       font-weight: 800;
-
       font-size: 3.2em;
-
       line-height: .8;
-
       float: left;
-
       margin: .06em .12em 0 0;
-
       color: var(--blue, #4CC3F0);
     }
-
 
     /* =====================================================
        FRASE FINAL
@@ -84,45 +71,27 @@
 
     .rumbo-message-final {
       font-family: 'Poppins', sans-serif;
-
       font-weight: 800;
-
       font-size: clamp(21px, 2.4vw, 27px);
-
       line-height: 1.55;
-
       border-left: 5px solid var(--orange, #F5A524);
-
       padding: 15px 20px;
-
       margin: 42px 0;
-
       border-radius: 12px;
-
       background: rgba(245,165,36,.08);
     }
 
-
     .rumbo-message-continue {
       font-family: 'Poppins', sans-serif;
-
       font-weight: 700;
-
       font-size: clamp(19px, 2.2vw, 24px);
-
       line-height: 1.6;
-
       text-align: center;
-
       color: var(--blue, #4CC3F0);
-
       margin-top: 45px;
-
       padding-top: 30px;
-
       border-top: 1px dashed rgba(128,128,128,.3);
     }
-
 
     /* =====================================================
        ACCESOS
@@ -130,274 +99,172 @@
 
     .rumbo-access {
       max-width: 600px;
-
       margin: 38px auto 0;
-
       text-align: center;
     }
 
-
     .rumbo-access-toggle {
-
       display: inline-flex;
-
       align-items: center;
-
       justify-content: center;
-
       gap: 8px;
-
       padding: 15px 28px;
-
       border: none;
-
       border-radius: 999px;
-
       background: var(--blue, #4CC3F0);
-
       color: #fff;
-
       font-family: 'Poppins', sans-serif;
-
       font-size: 16px;
-
       font-weight: 700;
-
       cursor: pointer;
-
       transition:
         transform .2s ease,
         background .2s ease,
         box-shadow .2s ease;
     }
 
-
     .rumbo-access-toggle:hover {
-
       transform: translateY(-2px);
-
       background: #36addb;
-
-      box-shadow:
-        0 8px 22px rgba(76,195,240,.25);
+      box-shadow: 0 8px 22px rgba(76,195,240,.25);
     }
-
 
     .rumbo-access-toggle:active {
-
       transform: scale(.97);
-
     }
 
-
     .rumbo-access-list {
-
       display: grid;
-
       gap: 14px;
-
       margin: 22px auto 0;
-
       text-align: left;
-
       animation: rumboAccessOpen .25s ease;
     }
 
-
     .rumbo-access-list[hidden] {
-
       display: none;
-
     }
 
-
     .rumbo-access-item {
-
       display: flex;
-
       flex-direction: column;
-
       gap: 4px;
-
       padding: 18px 20px;
-
       border-radius: 15px;
-
       background: rgba(76,195,240,.07);
-
       border: 1px solid rgba(76,195,240,.22);
-
       font-family: 'Inter', sans-serif;
-
       font-size: 16px;
-
       line-height: 1.65;
     }
 
-
     .rumbo-access-item strong {
-
       margin-bottom: 5px;
-
       color: var(--orange, #F5A524);
-
       font-family: 'Poppins', sans-serif;
-
       font-size: 15px;
-
       font-weight: 800;
-
       letter-spacing: .5px;
     }
 
-
     @keyframes rumboAccessOpen {
-
       from {
-
         opacity: 0;
-
         transform: translateY(-8px);
-
       }
 
       to {
-
         opacity: 1;
-
         transform: translateY(0);
-
       }
-
     }
-
 
     /* =====================================================
        FRASE DEL DÍA
     ===================================================== */
 
     .rumbo-daily-card {
-
       max-width: 850px;
-
       margin: 0 auto;
-
       padding: 28px 32px;
-
       border-radius: 20px;
-
       background:
         linear-gradient(
           135deg,
           rgba(76,195,240,.08),
           rgba(255,255,255,.75)
         );
-
       border: 1px solid rgba(76,195,240,.16);
-
       box-shadow:
         0 8px 25px rgba(30,70,90,.06);
-
       text-align: center;
     }
 
-
     .rumbo-daily-label {
-
       display: block;
-
       margin-bottom: 10px;
-
       font-family: 'Poppins', sans-serif;
-
       font-size: 13px;
-
       font-weight: 800;
-
       letter-spacing: 1px;
-
       color: var(--blue, #4CC3F0);
     }
 
-
     .rumbo-daily-card #footer-quote {
-
       display: block;
-
       font-family: 'Poppins', sans-serif;
-
       font-size: clamp(18px, 2vw, 22px);
-
       font-weight: 700;
-
       line-height: 1.55;
-
     }
-
 
     /* =====================================================
        WHATSAPP FLOTANTE
     ===================================================== */
 
     .rumbo-whatsapp-float {
-
       position: fixed;
-
       right: 20px;
-
       bottom: 22px;
-
       z-index: 9999;
-
       display: inline-flex;
-
       align-items: center;
-
       gap: 8px;
-
       padding: 10px 15px;
-
       border-radius: 999px;
-
       background: #25D366;
-
       color: #fff;
-
       text-decoration: none;
-
       font-family: 'Poppins', sans-serif;
-
       font-size: 13px;
-
       font-weight: 700;
-
       box-shadow:
         0 8px 22px rgba(37,211,102,.30);
-
       transition:
         transform .2s ease,
         box-shadow .2s ease;
     }
 
-
     .rumbo-whatsapp-float:hover {
-
       transform: translateY(-3px);
-
       box-shadow:
         0 12px 28px rgba(37,211,102,.38);
     }
 
-
     .rumbo-whatsapp-float svg {
-
       width: 19px;
-
       height: 19px;
-
       flex-shrink: 0;
     }
 
+    /* =====================================================
+       SIMULADOR EN NAVEGACIÓN
+    ===================================================== */
+
+    .main-nav a.simulador-nav,
+    .bottom-nav a.simulador-nav {
+      font-weight: 700;
+    }
 
     /* =====================================================
        MÓVIL
@@ -406,86 +273,57 @@
     @media (max-width: 480px) {
 
       .rumbo-message-card {
-
         padding: 28px 20px;
-
       }
 
       .rumbo-message {
-
         font-size: 19px;
-
         line-height: 1.85;
-
       }
 
       .rumbo-message p {
-
         margin-bottom: 27px;
-
       }
 
       .rumbo-message-final {
-
         font-size: 21px;
-
         padding-left: 18px;
-
       }
 
       .rumbo-message-continue {
-
         font-size: 19px;
-
       }
 
       .rumbo-access {
-
         margin-top: 30px;
-
       }
 
       .rumbo-access-toggle {
-
         width: 100%;
-
       }
 
       .rumbo-access-item {
-
         padding: 16px;
-
         font-size: 15px;
-
       }
 
       .rumbo-daily-card {
-
         padding: 24px 18px;
-
       }
 
       .rumbo-whatsapp-float {
-
         right: 12px;
-
         bottom: 75px;
-
         padding: 9px 13px;
-
         font-size: 12px;
-
       }
-
     }
 
   </style>
-
 </head>
 
 
 <body>
-
 
   <!-- =====================================================
        HEADER
@@ -514,7 +352,6 @@
             role="img"
             aria-label="RUMBO"
           >
-
             <circle
               cx="18"
               cy="24"
@@ -554,6 +391,8 @@
       </a>
 
 
+      <!-- NAVEGACIÓN SUPERIOR -->
+
       <nav class="main-nav">
 
         <a href="index.html" class="active">
@@ -566,10 +405,8 @@
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-
             <path d="M3 11l9-8 9 8"/>
             <path d="M5 10v10h14V10"/>
-
           </svg>
 
           Inicio
@@ -587,13 +424,11 @@
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-
             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
 
             <path
               d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
             />
-
           </svg>
 
           Cursos
@@ -611,7 +446,6 @@
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-
             <rect
               x="8"
               y="2"
@@ -643,14 +477,47 @@
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-
             <path d="M12 2 2 7l10 5 10-5-10-5z"/>
             <path d="M2 17l10 5 10-5"/>
             <path d="M2 12l10 5 10-5"/>
-
           </svg>
 
           Tomos
+
+        </a>
+
+
+        <!-- NUEVO: SIMULADOR -->
+
+        <a
+          href="simulador.html"
+          class="simulador-nav"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+
+            <rect
+              x="3"
+              y="3"
+              width="18"
+              height="18"
+              rx="3"
+            />
+
+            <path d="M8 16v-3"/>
+            <path d="M12 16V8"/>
+            <path d="M16 16v-5"/>
+
+          </svg>
+
+          Simulador
 
         </a>
 
@@ -684,38 +551,65 @@
   </header>
 
 
-
   <main>
 
 
     <!-- =====================================================
-         1. BIENVENIDA
+         AVISO WHATSAPP
     ===================================================== -->
-<a
-  href="https://whatsapp.com/channel/0029VbDFAEu7YScyVZBNul0X"
-  target="_blank"
-  rel="noopener noreferrer"
-  style="
-    display: block;
-    margin: 0;
-    padding: 12px 16px;
-    background: #FFD43B;
-    color: #172033;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 700;
-    text-decoration: none;
-    border-bottom: 2px solid #F4B400;
-  "
->
-  📢 <strong>¡Comparte RUMBO con tus amigos y compañeros!</strong><br>
-  <span style="font-size: 13px; font-weight: 600;">
-    Tu apoyo nos ayuda a seguir con este proyecto.
-  </span>
-</a>
+
+    <a
+      href="https://whatsapp.com/channel/0029VbDFAEu7YScyVZBNul0X"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="
+        display:block;
+        margin:0;
+        padding:12px 16px;
+        background:#FFD43B;
+        color:#172033;
+        text-align:center;
+        font-size:15px;
+        font-weight:700;
+        text-decoration:none;
+        border-bottom:2px solid #F4B400;
+      "
+    >
+
+      📢 <strong>¡Comparte RUMBO con tus amigos y compañeros!</strong><br>
+
+      <span style="font-size:13px;font-weight:600;">
+        Tu apoyo nos ayuda a seguir con este proyecto.
+      </span>
+
+    </a>
 
 
-<section class="hero container">
+    <!-- =====================================================
+         FRASE DEL DÍA
+         AHORA ESTÁ ANTES DE LA BIENVENIDA
+    ===================================================== -->
+
+    <section class="section container">
+
+      <div class="rumbo-daily-card">
+
+        <span class="rumbo-daily-label">
+          💬 FRASE DEL DÍA
+        </span>
+
+        <span id="footer-quote"></span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BIENVENIDA
+    ===================================================== -->
+
+    <section class="hero container">
 
       <div class="hero-card">
 
@@ -787,7 +681,7 @@
           <p class="eyebrow">
             ¡Bienvenido a RUMBO!
           </p>
-         
+
 
           <h1>
 
@@ -799,13 +693,16 @@
 
           </h1>
 
+
           <p class="lead">
-            Esta plataforma es un espacio de apoyo para tu preparación académica. Compártela con tus amigos
+
+            Esta plataforma es un espacio de apoyo para tu preparación académica.
+            Compártela con tus amigos
+
           </p>
 
 
           <ul class="notice-list">
-
 
             <li>
 
@@ -900,7 +797,7 @@
               Por respeto a los creadores y a quienes comparten estos recursos
 
               <strong>
-                te pedimos no lucrar con ellos 
+                te pedimos no lucrar con ellos
               </strong>
 
             </li>
@@ -983,267 +880,161 @@
     </section>
 
 
-<!-- =====================================================
-     2. LEE ESTO PARA OBTENER LAS CONTRASEÑAS
-===================================================== -->
-<!-- =====================================================
-     2. LEELO
-===================================================== -->
-
-<section class="section container">
-
-  <div class="info-card rumbo-message-card">
-
-    <span class="section-kicker">
-      INFORMACIÓN IMPORTANTE
-    </span>
-
-
-    <div class="rumbo-message">
-
-
-      <p>
-        A veces pensamos que necesitamos muchos libros, materiales,
-        dispositivos o recursos para estar mejor preparados, compramos,
-        descargamos y acumulamos cosas, esperando tener todo para recién
-        empezar, y al final seguimos sin estudiar.
-      </p>
-
-
-      <p>
-        Vivimos en un mundo donde muchas cosas se consiguen con dinero,
-        comprar puede darte facilidad, comodidad y oportunidades, pero
-        <strong>no significa que vas a aprender más.</strong>
-      </p>
-
-
-      <p>
-        Ni una academia, ni un libro, ni un resumen, ni RUMBO pueden
-        aprender por ti, todo eso simplemente sirve como apoyo, porque
-        al final depende de ti sentarte, estudiar, practicar,
-        equivocarte y volver a intentarlo.
-      </p>
-
-
-      <p>
-        No busco lucrar con esta página, sé que no todos tienen los
-        recursos para pagar una academia o conseguir todo el material.
-        Por eso RUMBO busca ser un apoyo para quienes lo necesitan.
-      </p>
-
-
-      <p>
-        Los materiales pueden desaparecer, los enlaces pueden dejar de
-        funcionar y las páginas pueden dejar de existir, pero
-        <strong>lo que aprendiste nadie te lo quita.</strong>
-      </p>
-
-
-      <p>
-        Tal vez yo no pude, pero tú sí puedes, quizá incluso puedas
-        hacerlo mejor.
-      </p>
-
-
-      <p class="rumbo-message-final">
-        No esperes tenerlo todo para empezar, empieza con lo que tienes.
-      </p>
-
-
-      <p class="rumbo-message-continue">
-        Si llegaste hasta aquí, ahora sí puedes continuar.
-      </p>
-
-    </div>
-    
     <!-- =====================================================
-         ACCESOS / CONTRASEÑAS DESACTIVADOS TEMPORALMENTE
-         
-         Se conserva todo el código para poder activarlo
-         nuevamente después.
-    ===================================================== -->
-
-    <!--
-
-    <div class="rumbo-access">
-
-
-      <button
-        type="button"
-        class="rumbo-access-toggle"
-        id="rumbo-access-toggle"
-        aria-expanded="false"
-        aria-controls="rumbo-access-list"
-      >
-
-        🔐 Ver contraseñas
-
-      </button>
-
-
-      <div
-        class="rumbo-access-list"
-        id="rumbo-access-list"
-        hidden
-      >
-
-
-        <div class="rumbo-access-item">
-
-          <strong>
-            ESPARTA
-          </strong>
-
-          <span>
-            Usuario: <b>esparta</b>
-          </span>
-
-          <span>
-            Contraseña: <b>esparta</b>
-          </span>
-
-        </div>
-
-
-        <div class="rumbo-access-item">
-
-          <strong>
-            KELSEN
-          </strong>
-
-          <span>
-            Usuario: <b>kelsen</b>
-          </span>
-
-          <span>
-            Contraseña: <b>kelsen</b>
-          </span>
-
-        </div>
-
-
-        <div class="rumbo-access-item">
-
-          <strong>
-            BRICEÑO
-          </strong>
-
-          <span>
-            Usuario: <b>briceño</b>
-          </span>
-
-          <span>
-            Contraseña: <b>briceño</b>
-          </span>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-    -->
-
-  </div>
-
-</section>
-<!-- =====================================================
-     APOYA Y COMPARTE
-===================================================== -->
-
-<section class="section container">
-
-  <a
- class="action-card" href="https://whatsapp.com/channel/0029VbDFAEu7YScyVZBNul0X"
-  target="_blank"
-  rel="noopener noreferrer"
-  style="background:#0E9F6E;"
->
-
-    <span class="ic">
-
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-
-        <path
-          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06
-             a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84
-             a5.5 5.5 0 0 0 0-7.78z"
-        />
-
-      </svg>
-
-    </span>
-
-
-    <div>
-
-      <h3 style="font-size:1.25rem; font-weight:800;">
-        APOYA Y COMPARTE
-      </h3>
-
-      <p style="font-size:1.05rem; font-weight:700;">
-        ¿Tienes apuntes, clases, archivos o material de estudio?
-        <strong>Contáctanos y envíanos tu material para compartirlo
-        y ayudar a otros estudiantes.</strong>
-      </p>
-
-    </div>
-
-
-    <span class="go">
-
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-
-        <path d="M5 12h14"/>
-        <path d="M13 6l6 6-6 6"/>
-
-      </svg>
-
-    </span>
-
-  </a>
-
-</section>
-
-    <!-- =====================================================
-         3. FRASE DEL DÍA
+         MENSAJE IMPORTANTE
     ===================================================== -->
 
     <section class="section container">
 
-      <div class="rumbo-daily-card">
+      <div class="info-card rumbo-message-card">
 
-        <span class="rumbo-daily-label">
-          💬 FRASE DEL DÍA
+        <span class="section-kicker">
+          INFORMACIÓN IMPORTANTE
         </span>
 
 
-        <span id="footer-quote">
-        </span>
+        <div class="rumbo-message">
+
+          <p>
+            A veces pensamos que necesitamos muchos libros, materiales,
+            dispositivos o recursos para estar mejor preparados, compramos,
+            descargamos y acumulamos cosas, esperando tener todo para recién
+            empezar, y al final seguimos sin estudiar.
+          </p>
+
+
+          <p>
+            Vivimos en un mundo donde muchas cosas se consiguen con dinero,
+            comprar puede darte facilidad, comodidad y oportunidades, pero
+            <strong>no significa que vas a aprender más.</strong>
+          </p>
+
+
+          <p>
+            Ni una academia, ni un libro, ni un resumen, ni RUMBO pueden
+            aprender por ti, todo eso simplemente sirve como apoyo, porque
+            al final depende de ti sentarte, estudiar, practicar,
+            equivocarte y volver a intentarlo.
+          </p>
+
+
+          <p>
+            No busco lucrar con esta página, sé que no todos tienen los
+            recursos para pagar una academia o conseguir todo el material.
+            Por eso RUMBO busca ser un apoyo para quienes lo necesitan.
+          </p>
+
+
+          <p>
+            Los materiales pueden desaparecer, los enlaces pueden dejar de
+            funcionar y las páginas pueden dejar de existir, pero
+            <strong>lo que aprendiste nadie te lo quita.</strong>
+          </p>
+
+
+          <p>
+            Tal vez yo no pude, pero tú sí puedes, quizá incluso puedas
+            hacerlo mejor.
+          </p>
+
+
+          <p class="rumbo-message-final">
+            No esperes tenerlo todo para empezar, empieza con lo que tienes.
+          </p>
+
+
+          <p class="rumbo-message-continue">
+            Si llegaste hasta aquí, ahora sí puedes continuar.
+          </p>
+
+        </div>
 
       </div>
 
     </section>
 
 
+    <!-- =====================================================
+         APOYA Y COMPARTE
+    ===================================================== -->
+
+    <section class="section container">
+
+      <a
+        class="action-card"
+        href="https://whatsapp.com/channel/0029VbDFAEu7YScyVZBNul0X"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="background:#0E9F6E;"
+      >
+
+        <span class="ic">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06
+                 a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84
+                 a5.5 5.5 0 0 0 0-7.78z"
+            />
+
+          </svg>
+
+        </span>
+
+
+        <div>
+
+          <h3 style="font-size:1.25rem;font-weight:800;">
+            APOYA Y COMPARTE
+          </h3>
+
+          <p style="font-size:1.05rem;font-weight:700;">
+
+            ¿Tienes apuntes, clases, archivos o material de estudio?
+
+            <strong>
+              Contáctanos y envíanos tu material para compartirlo
+              y ayudar a otros estudiantes.
+            </strong>
+
+          </p>
+
+        </div>
+
+
+        <span class="go">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+
+            <path d="M5 12h14"/>
+            <path d="M13 6l6 6-6 6"/>
+
+          </svg>
+
+        </span>
+
+      </a>
+
+    </section>
+
 
     <!-- =====================================================
-         4. MATRIZ / TEMARIO 2027
+         MATRIZ / TEMARIO 2027
     ===================================================== -->
 
     <section class="section container">
@@ -1319,9 +1110,8 @@
     </section>
 
 
-
     <!-- =====================================================
-         5. QUÉ DESEAS ESTUDIAR
+         QUÉ DESEAS ESTUDIAR
     ===================================================== -->
 
     <section class="section container">
@@ -1399,7 +1189,6 @@
         </a>
 
 
-
         <!-- PRÁCTICAS -->
 
         <a
@@ -1461,7 +1250,6 @@
           </span>
 
         </a>
-
 
 
         <!-- SIMULADOR -->
@@ -1531,7 +1319,6 @@
           </span>
 
         </a>
-
 
 
         <!-- TOMOS -->
@@ -1606,19 +1393,15 @@
 
         </a>
 
-
       </div>
 
     </section>
 
-
   </main>
-
 
 
   <!-- =====================================================
        WHATSAPP FLOTANTE
-       INDEPENDIENTE DE "APOYA Y COMPARTE"
   ===================================================== -->
 
   <a
@@ -1666,7 +1449,6 @@
   </a>
 
 
-
   <!-- =====================================================
        FOOTER
   ===================================================== -->
@@ -1674,7 +1456,6 @@
   <footer class="site-footer">
 
     <div class="container">
-
 
       <span class="item">
 
@@ -1702,16 +1483,12 @@
         href="#"
         id="logout-link"
       >
-
         Cerrar sesión
-
       </a>
-
 
     </div>
 
   </footer>
-
 
 
   <!-- =====================================================
@@ -1827,8 +1604,42 @@
 
     </a>
 
-  </nav>
 
+    <!-- NUEVO: SIMULADOR EN MENÚ INFERIOR -->
+
+    <a
+      href="simulador.html"
+      class="simulador-nav"
+    >
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="3"
+        />
+
+        <path d="M8 16v-3"/>
+        <path d="M12 16V8"/>
+        <path d="M16 16v-5"/>
+
+      </svg>
+
+      Simulador
+
+    </a>
+
+  </nav>
 
 
   <!-- =====================================================
@@ -1836,15 +1647,10 @@
   ===================================================== -->
 
   <script src="assets/users.js"></script>
-
   <script src="assets/frases.js"></script>
-
   <script src="assets/auth.js"></script>
-
   <script src="assets/data.js"></script>
-
   <script src="assets/app.js"></script>
-
 
 
   <!-- =====================================================
@@ -1867,9 +1673,7 @@
             'rumbo-access-list'
           );
 
-
         if (!button || !list) return;
-
 
         button.addEventListener(
           'click',
@@ -1878,16 +1682,13 @@
             const isOpen =
               !list.hidden;
 
-
             list.hidden =
               isOpen;
-
 
             button.setAttribute(
               'aria-expanded',
               String(!isOpen)
             );
-
 
             button.innerHTML =
               isOpen
@@ -1902,7 +1703,5 @@
 
   </script>
 
-
 </body>
-
 </html>
