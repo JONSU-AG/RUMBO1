@@ -1,5 +1,10 @@
 const PRACTICAS = [
 
+{
+  titulo: "CEPREQUINTOS",
+  descripcion: "Material en proceso. Se actualizará constantemente.",
+  carpeta: "https://drive.google.com/drive/folders/1RfSFh4w496DoJ3-TShLXjgTLOALnJKDr"
+},
   {
     titulo: "Prácticas Academia Esparta",
     descripcion: "Ejercicios y prácticas de la Academia Esparta.",
