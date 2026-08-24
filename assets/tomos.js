@@ -1,9 +1,9 @@
 const TOMOS = [
 
   [
-    "Tomos CEPREUNSA",
-    "Material de estudio organizado de CEPREUNSA.",
-    "https://drive.google.com/drive/folders/1nzuWdHTmM6SC6cwxQcvs9JNQ4N0rEiHF"
+    "Tomos y prácticas CEPREQUINTOS 2027",
+    "Material de estudio, tomos y prácticas de CEPREQUINTOS.",
+    "https://drive.google.com/drive/folders/1RfSFh4w496DoJ3-TShLXjgTLOALnJKDr"
   ],
 
   [
