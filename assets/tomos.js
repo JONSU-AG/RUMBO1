@@ -7,6 +7,12 @@ const TOMOS = [
   ],
 
   [
+    "Tomos CEPREUNSA",
+    "Material de estudio organizado de CEPREUNSA.",
+    "https://drive.google.com/drive/folders/1nzuWdHTmM6SC6cwxQcvs9JNQ4N0rEiHF"
+  ],
+
+  [
     "Exámenes pasados",
     "Exámenes anteriores para practicar.",
     "https://drive.google.com/drive/folders/1SvOPvIwppyUTJ-16ImBpfnh6wDWaKNVZ"
