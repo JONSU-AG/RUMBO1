@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
@@ -85,6 +86,7 @@
       font-weight: 700;
     }
 
+
     /* =========================================================
        ESTADO DEL CICLO
     ========================================================= */
@@ -128,6 +130,7 @@
       box-shadow: 0 0 0 3px rgba(152,162,179,.12);
     }
 
+
     /* =========================================================
        CONTENEDOR DEL PROCESO
     ========================================================= */
@@ -163,6 +166,81 @@
       font-size: 14px;
       line-height: 1.5;
     }
+
+
+    /* =========================================================
+       SELECTOR DE SEMANAS
+    ========================================================= */
+
+    .briceno-semanas {
+      margin-top: 20px;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid #edf0f5;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(11,18,41,.05);
+    }
+
+    .briceno-semanas-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      color: #0B1229;
+      font-family: Poppins, sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .briceno-semanas-title span {
+      font-size: 18px;
+    }
+
+    .briceno-semanas-lista {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .briceno-semana-btn {
+      border: 1px solid #e1e7ec;
+      background: #f8fafc;
+      color: #52606d;
+      border-radius: 10px;
+      padding: 9px 13px;
+      cursor: pointer;
+      font-family: Inter, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+    }
+
+    .briceno-semana-btn:hover {
+      transform: translateY(-1px);
+      background: #eef9fd;
+      border-color: #bfe9fb;
+      color: #0879ad;
+    }
+
+    .briceno-semana-btn.active {
+      background: #4CC3F0;
+      border-color: #4CC3F0;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(76,195,240,.22);
+    }
+
+    .briceno-semana-btn .semana-descripcion {
+      display: block;
+      margin-top: 2px;
+      font-size: 10px;
+      font-weight: 600;
+      opacity: .85;
+    }
+
 
     /* =========================================================
        GOOGLE DRIVE
@@ -227,6 +305,7 @@
       font-size: 18px;
     }
 
+
     /* =========================================================
        AVISO DE APOYO
     ========================================================= */
@@ -260,6 +339,7 @@
       color: #0879ad;
     }
 
+
     /* =========================================================
        AVISO BIOLOGÍA / ANATOMÍA
     ========================================================= */
@@ -288,6 +368,59 @@
     .briceno-importante p {
       margin: 0;
     }
+
+
+    /* =========================================================
+       ENCABEZADO DE SEMANA
+    ========================================================= */
+
+    .briceno-semana-contenido {
+      margin-bottom: 18px;
+    }
+
+    .briceno-semana-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 14px;
+      padding: 16px 18px;
+      background: #fff;
+      border: 1px solid #edf0f5;
+      border-radius: 14px;
+    }
+
+    .briceno-semana-header-left {
+      min-width: 0;
+    }
+
+    .briceno-semana-header h3 {
+      margin: 0;
+      color: #0B1229;
+      font-family: Poppins, sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .briceno-semana-header p {
+      margin: 4px 0 0;
+      color: #667085;
+      font-family: Inter, sans-serif;
+      font-size: 12px;
+    }
+
+    .briceno-semana-badge {
+      flex-shrink: 0;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: #eef9fd;
+      border: 1px solid #c9edf9;
+      color: #0879ad;
+      font-family: Inter, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
 
     /* =========================================================
        ÁREAS
@@ -358,6 +491,7 @@
       margin-left: auto;
     }
 
+
     /* =========================================================
        INDICADOR DE VIDEOS
     ========================================================= */
@@ -410,6 +544,7 @@
       transform: rotate(180deg);
     }
 
+
     /* =========================================================
        CONTENIDO ÁREA
     ========================================================= */
@@ -422,6 +557,7 @@
     .briceno-area.open .briceno-area-content {
       display: block;
     }
+
 
     /* =========================================================
        VIDEOS
@@ -488,6 +624,7 @@
       padding: 10px 0;
     }
 
+
     /* =========================================================
        AVISO GENERAL
     ========================================================= */
@@ -516,6 +653,7 @@
       margin: 0;
     }
 
+
     /* =========================================================
        MÓVIL
     ========================================================= */
@@ -534,6 +672,27 @@
       .briceno-ciclo-actual {
         top: 12px;
         right: 12px;
+      }
+
+      .briceno-semanas {
+        padding: 13px;
+      }
+
+      .briceno-semanas-lista {
+        gap: 7px;
+      }
+
+      .briceno-semana-btn {
+        flex: 1 1 calc(50% - 7px);
+        text-align: center;
+      }
+
+      .briceno-semana-header {
+        padding: 14px;
+      }
+
+      .briceno-semana-header h3 {
+        font-size: 16px;
       }
 
       .briceno-drive-box {
@@ -588,6 +747,7 @@
   </style>
 </head>
 
+
 <body>
 
   <!-- =====================================================
@@ -618,9 +778,26 @@
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle cx="18" cy="24" r="14" fill="#4CC3F0"/>
-            <circle cx="16" cy="19" r="2.2" fill="#0B1229"/>
-            <path d="M8 24 L2 20 L8 28 Z" fill="#4CC3F0"/>
+
+            <circle
+              cx="18"
+              cy="24"
+              r="14"
+              fill="#4CC3F0"
+            />
+
+            <circle
+              cx="16"
+              cy="19"
+              r="2.2"
+              fill="#0B1229"
+            />
+
+            <path
+              d="M8 24 L2 20 L8 28 Z"
+              fill="#4CC3F0"
+            />
+
             <text
               x="21"
               y="34"
@@ -629,6 +806,7 @@
               font-size="30"
               fill="#E8433F"
             >R</text>
+
           </svg>
 
         </span>
@@ -636,6 +814,7 @@
         RUMBO
 
       </a>
+
 
       <nav class="main-nav">
 
@@ -656,6 +835,7 @@
         </a>
 
       </nav>
+
 
       <button
         class="nav-toggle"
@@ -678,6 +858,7 @@
 
     <div class="container">
 
+
       <!-- FRASE -->
 
       <p class="course-quote">
@@ -690,7 +871,11 @@
           stroke-linecap="round"
           stroke-linejoin="round"
         >
-          <path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+
+          <path
+            d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"
+          />
+
         </svg>
 
         <span id="course-quote-text">
@@ -771,6 +956,7 @@
       ================================================== -->
 
       <div class="briceno-selector">
+
 
         <!-- 2026 -->
 
@@ -900,17 +1086,21 @@
           stroke-linejoin="round"
         >
 
-          <circle cx="12" cy="12" r="10"/>
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+          />
+
           <path d="M12 16v-4"/>
+
           <path d="M12 8h.01"/>
 
         </svg>
 
         <p id="briceno-aviso">
-
           Estás viendo el Proceso Intensivo 2026.
           Selecciona un área para ver sus clases.
-
         </p>
 
       </div>
@@ -1024,16 +1214,28 @@
   <!-- Datos del proceso 2026 -->
   <script src="assets/data.js"></script>
 
-  <!-- IMPORTANTE:
-       ESTE ES EL ARCHIVO QUE CONTIENE:
-       window.briceno2027Areas
+  <!--
+    ARCHIVO 2027
+
+    AQUÍ PUEDES TENER:
+
+    window.briceno2027Semana00 = [...]
+    window.briceno2027Semana01 = [...]
+    window.briceno2027Semana02 = [...]
+    window.briceno2027Semana03 = [...]
+
+    etc.
+
+    NO ES NECESARIO MODIFICAR ESTE HTML.
   -->
+
   <script src="assets/briceñoareas2027.js"></script>
 
 
   <script>
 
     document.addEventListener("DOMContentLoaded", function () {
+
 
       /* ===================================================
          ELEMENTOS
@@ -1043,7 +1245,9 @@
         document.getElementById("briceno-contenido");
 
       const botones =
-        document.querySelectorAll(".briceno-selector-btn");
+        document.querySelectorAll(
+          ".briceno-selector-btn"
+        );
 
       const aviso =
         document.getElementById("briceno-aviso");
@@ -1070,6 +1274,7 @@
 
         },
 
+
         "2027": {
 
           titulo:
@@ -1078,14 +1283,75 @@
           descripcion:
             "Clases y contenidos correspondientes a la II Fase CEPREUNSA / Ordinario / CEPREQUINTOS 2027.",
 
-          areas:
-            Array.isArray(window.briceno2027Areas)
-              ? window.briceno2027Areas
-              : []
+          areas: []
 
         }
 
       };
+
+
+      /* ===================================================
+         DETECTAR AUTOMÁTICAMENTE LAS SEMANAS 2027
+      =================================================== */
+
+      function obtenerSemanas2027() {
+
+        return Object.keys(window)
+
+          .filter(function (clave) {
+
+            return /^briceno2027Semana\d+$/.test(clave);
+
+          })
+
+          .map(function (clave) {
+
+            const numero =
+              parseInt(
+                clave.replace(
+                  "briceno2027Semana",
+                  ""
+                ),
+                10
+              );
+
+            return {
+
+              clave: clave,
+
+              numero: numero,
+
+              datos:
+                Array.isArray(window[clave])
+                  ? window[clave]
+                  : []
+
+            };
+
+          })
+
+          .sort(function (a, b) {
+
+            return a.numero - b.numero;
+
+          });
+
+      }
+
+
+      /* ===================================================
+         SEMANAS DETECTADAS
+      =================================================== */
+
+      let semanas2027 =
+        obtenerSemanas2027();
+
+
+      /* ===================================================
+         SEMANA SELECCIONADA
+      =================================================== */
+
+      let semanaSeleccionada = 0;
 
 
       /* ===================================================
@@ -1095,7 +1361,8 @@
       function obtenerIcono(nombre) {
 
         const n =
-          String(nombre).toLowerCase();
+          String(nombre)
+            .toLowerCase();
 
         if (
           n.includes("biolog") ||
@@ -1103,7 +1370,10 @@
         )
           return "🧬";
 
-        if (n.includes("matem"))
+        if (
+          n.includes("matem") ||
+          n.includes("razonamiento matem")
+        )
           return "📐";
 
         if (
@@ -1146,17 +1416,18 @@
           return "⚖️";
 
         return "📚";
+
       }
 
 
       /* ===================================================
          ESCAPAR HTML
-         Evita que un nombre del array rompa el HTML.
       =================================================== */
 
       function escaparHTML(valor) {
 
         return String(valor ?? "")
+
           .replace(/&/g, "&amp;")
           .replace(/</g, "&lt;")
           .replace(/>/g, "&gt;")
@@ -1167,10 +1438,492 @@
 
 
       /* ===================================================
+         LIMPIAR URL
+
+         Acepta:
+
+         https://youtu.be/abc
+
+         y también:
+
+         [https://youtu.be/abc](https://youtu.be/abc)
+      =================================================== */
+
+      function limpiarURL(url) {
+
+        if (!url) {
+          return "";
+        }
+
+        let resultado =
+          String(url).trim();
+
+        const markdown =
+          resultado.match(
+            /^\[.*?\]\((.*?)\)$/
+          );
+
+        if (markdown) {
+          resultado = markdown[1];
+        }
+
+        return resultado;
+
+      }
+
+
+      /* ===================================================
+         NORMALIZAR NOMBRE DE CURSO
+      =================================================== */
+
+      function normalizarNombre(nombre) {
+
+        return String(nombre || "")
+
+          .toUpperCase()
+
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+
+          .replace(/RAZONAMIENTO MATEMATICO/g, "RAZ MATEMATICO")
+
+          .replace(/RAZ\. MATEMATICO/g, "RAZ MATEMATICO")
+
+          .replace(/RAZ\. MATEMATICA/g, "RAZ MATEMATICO")
+
+          .replace(/RAZONAMIENTO VERBAL/g, "RAZ VERBAL")
+
+          .replace(/RAZ\. VERBAL/g, "RAZ VERBAL")
+
+          .replace(/\s+/g, " ")
+
+          .trim();
+
+      }
+
+
+      /* ===================================================
+         BUSCAR CURSO DESTINO DE UN SEMINARIO
+      =================================================== */
+
+      function obtenerCursoSeminario(nombreSeminario) {
+
+        const n =
+          normalizarNombre(
+            nombreSeminario
+          );
+
+
+        /*
+          BIOLOGÍA / ANATOMÍA
+        */
+
+        if (
+          n.includes("SEMINARIO DE BIOLOGIA") ||
+          n.includes("SEMINARIO DE ANATOMIA")
+        ) {
+
+          return "BIOLOGIA";
+
+        }
+
+
+        /*
+          RAZONAMIENTO MATEMÁTICO
+        */
+
+        if (
+          n.includes("SEMINARIO DE RAZONAMIENTO MATEMATICO")
+        ) {
+
+          return "RAZ MATEMATICO";
+
+        }
+
+
+        /*
+          MATEMÁTICA
+        */
+
+        if (
+          n.includes("SEMINARIO DE MATEMATICA")
+        ) {
+
+          return "MATEMATICA";
+
+        }
+
+
+        /*
+          RAZONAMIENTO VERBAL
+        */
+
+        if (
+          n.includes("SEMINARIO DE RAZONAMIENTO VERBAL")
+        ) {
+
+          return "RAZ VERBAL";
+
+        }
+
+
+        /*
+          FÍSICA
+        */
+
+        if (
+          n.includes("SEMINARIO DE FISICA")
+        ) {
+
+          return "FISICA";
+
+        }
+
+
+        /*
+          QUÍMICA
+        */
+
+        if (
+          n.includes("SEMINARIO DE QUIMICA")
+        ) {
+
+          return "QUIMICA";
+
+        }
+
+
+        /*
+          HISTORIA
+        */
+
+        if (
+          n.includes("SEMINARIO DE HISTORIA")
+        ) {
+
+          return "HISTORIA";
+
+        }
+
+
+        /*
+          GEOGRAFÍA
+        */
+
+        if (
+          n.includes("SEMINARIO DE GEOGRAFIA")
+        ) {
+
+          return "GEOGRAFIA";
+
+        }
+
+
+        /*
+          LENGUAJE
+        */
+
+        if (
+          n.includes("SEMINARIO DE LENGUAJE")
+        ) {
+
+          return "LENGUAJE";
+
+        }
+
+
+        /*
+          FILOSOFÍA
+
+          Si no existe como curso,
+          se creará como independiente.
+        */
+
+        if (
+          n.includes("SEMINARIO DE FILOSOFIA")
+        ) {
+
+          return "FILOSOFIA";
+
+        }
+
+
+        /*
+          CÍVICA
+
+          Si no existe como curso,
+          se creará como independiente.
+        */
+
+        if (
+          n.includes("SEMINARIO DE CIVICA")
+        ) {
+
+          return "CIVICA";
+
+        }
+
+
+        return null;
+
+      }
+
+
+      /* ===================================================
+         DETERMINAR SI UN VIDEO ES SEMINARIO
+      =================================================== */
+
+      function esSeminario(video) {
+
+        const nombre =
+          typeof video === "string"
+            ? video
+            : video?.nombre || "";
+
+        return normalizarNombre(
+          nombre
+        ).includes("SEMINARIO");
+
+      }
+
+
+      /* ===================================================
+         ORGANIZAR CURSOS + SEMINARIOS
+      =================================================== */
+
+      function organizarAreas(datos) {
+
+        const resultado = [];
+
+
+        /*
+          PRIMERO AGREGAMOS LOS CURSOS NORMALES
+        */
+
+        datos.forEach(function (area) {
+
+          if (!area) {
+            return;
+          }
+
+          const nombre =
+            area.nombre ||
+            area.area ||
+            area.titulo ||
+            "";
+
+          const videos =
+            Array.isArray(area.videos)
+              ? area.videos.slice()
+              : [];
+
+
+          /*
+            Si el área contiene exclusivamente
+            seminarios, todavía no la agregamos.
+          */
+
+          const videosNormales =
+            videos.filter(function (video) {
+
+              return !esSeminario(video);
+
+            });
+
+
+          if (videosNormales.length > 0) {
+
+            resultado.push({
+
+              categoria:
+                area.categoria || "",
+
+              nombre:
+                nombre,
+
+              videos:
+                videosNormales
+
+            });
+
+          }
+
+        });
+
+
+        /*
+          SEGUNDO:
+
+          BUSCAMOS LOS SEMINARIOS
+        */
+
+        datos.forEach(function (area) {
+
+          if (!area) {
+            return;
+          }
+
+          const nombreArea =
+            area.nombre ||
+            area.area ||
+            area.titulo ||
+            "";
+
+          const videos =
+            Array.isArray(area.videos)
+              ? area.videos
+              : [];
+
+
+          videos.forEach(function (video) {
+
+            if (!esSeminario(video)) {
+              return;
+            }
+
+
+            const cursoDestino =
+              obtenerCursoSeminario(
+                typeof video === "string"
+                  ? video
+                  : video?.nombre || ""
+              );
+
+
+            /*
+              BUSCAMOS SI YA EXISTE
+              EL CURSO DESTINO
+            */
+
+            let curso =
+              resultado.find(function (item) {
+
+                return (
+                  normalizarNombre(item.nombre) ===
+                  normalizarNombre(cursoDestino)
+                );
+
+              });
+
+
+            /*
+              SI NO EXISTE, BUSCAMOS
+              COINCIDENCIAS MÁS FLEXIBLES
+            */
+
+            if (!curso && cursoDestino) {
+
+              curso =
+                resultado.find(function (item) {
+
+                  const nombre =
+                    normalizarNombre(
+                      item.nombre
+                    );
+
+                  const destino =
+                    normalizarNombre(
+                      cursoDestino
+                    );
+
+                  return (
+                    nombre.includes(destino) ||
+                    destino.includes(nombre)
+                  );
+
+                });
+
+            }
+
+
+            /*
+              SI EXISTE EL CURSO:
+              METEMOS EL SEMINARIO DENTRO
+            */
+
+            if (curso) {
+
+              curso.videos.push(video);
+
+            }
+
+
+            /*
+              SI NO EXISTE:
+              EL SEMINARIO SE CONVIERTE
+              EN UN CURSO INDEPENDIENTE
+            */
+
+            else {
+
+              const nombreSeminario =
+                cursoDestino ||
+                nombreArea ||
+                "Seminario";
+
+
+              let independiente =
+                resultado.find(function (item) {
+
+                  return (
+                    normalizarNombre(
+                      item.nombre
+                    ) ===
+                    normalizarNombre(
+                      nombreSeminario
+                    )
+                  );
+
+                });
+
+
+              if (!independiente) {
+
+                independiente = {
+
+                  categoria:
+                    area.categoria ||
+                    "SEMINARIOS",
+
+                  nombre:
+                    nombreSeminario,
+
+                  videos: []
+
+                };
+
+                resultado.push(
+                  independiente
+                );
+
+              }
+
+
+              independiente.videos.push(
+                video
+              );
+
+            }
+
+          });
+
+        });
+
+
+        return resultado;
+
+      }
+
+
+      /* ===================================================
          CREAR ÁREA
       =================================================== */
 
-      function crearArea(area, index, idProceso) {
+      function crearArea(
+        area,
+        index,
+        idProceso
+      ) {
 
         const nombre =
           area.nombre ||
@@ -1188,6 +1941,7 @@
         const bloque =
           document.createElement("div");
 
+
         bloque.className =
           "briceno-area";
 
@@ -1203,33 +1957,25 @@
 
           listaVideos =
             videos
+
               .map(function (video, i) {
 
                 let url = "";
                 let nombreVideo = "";
 
 
-                /*
-                 * 2026:
-                 * Se mantiene Video 1, Video 2...
-                 *
-                 * 2027:
-                 * Se toma EXACTAMENTE video.nombre
-                 * del archivo briceñoareas2027.js
-                 */
-
                 if (
                   typeof video === "string"
                 ) {
 
-                  url = video;
+                  url =
+                    limpiarURL(video);
 
                   nombreVideo =
-                    idProceso === "2027"
-                      ? "Video " + (i + 1)
-                      : "Video " + (i + 1);
+                    "Video " + (i + 1);
 
                 }
+
 
                 else if (
                   video &&
@@ -1237,16 +1983,21 @@
                 ) {
 
                   url =
-                    video.url || "";
+                    limpiarURL(
+                      video.url || ""
+                    );
 
 
-                  if (idProceso === "2027") {
+                  /*
+                    2027:
 
-                    /*
-                     * AQUÍ ESTÁ LA CLAVE:
-                     * NO se genera "Video 1".
-                     * Se usa video.nombre del ARRAY.
-                     */
+                    SE USA EXACTAMENTE
+                    EL NOMBRE DEL ARRAY
+                  */
+
+                  if (
+                    idProceso === "2027"
+                  ) {
 
                     nombreVideo =
                       video.nombre ||
@@ -1255,12 +2006,8 @@
 
                   }
 
-                  else {
 
-                    /*
-                     * 2026 SIEMPRE:
-                     * Video 1, Video 2, Video 3...
-                     */
+                  else {
 
                     nombreVideo =
                       "Video " + (i + 1);
@@ -1271,6 +2018,7 @@
 
 
                 return `
+
                   <div class="briceno-video">
 
                     <div class="briceno-video-name">
@@ -1297,19 +2045,24 @@
                     </a>
 
                   </div>
+
                 `;
 
               })
+
               .join("");
 
         }
 
+
         else {
 
           listaVideos = `
+
             <div class="briceno-empty">
               No hay videos agregados todavía.
             </div>
+
           `;
 
         }
@@ -1329,17 +2082,22 @@
             <span class="briceno-area-name">
 
               <span class="briceno-area-icon">
+
                 ${obtenerIcono(nombre)}
+
               </span>
 
               <span>
+
                 ${escaparHTML(nombre)}
+
               </span>
 
             </span>
 
 
             <span class="briceno-area-right">
+
 
               <span class="briceno-video-count">
 
@@ -1349,16 +2107,20 @@
 
                 ${videos.length}
 
-                ${videos.length === 1
-                  ? "video"
-                  : "videos"}
+                ${
+                  videos.length === 1
+                    ? "video"
+                    : "videos"
+                }
 
               </span>
 
 
               ${
                 idProceso === "2027"
+
                   ? `
+
                     <span class="briceno-ciclo-mini">
 
                       <span class="briceno-ciclo-mini-dot"></span>
@@ -1366,7 +2128,9 @@
                       Ciclo en curso
 
                     </span>
+
                   `
+
                   : ""
               }
 
@@ -1380,8 +2144,11 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
+
                 <path d="M6 9l6 6 6-6"/>
+
               </svg>
+
 
             </span>
 
@@ -1424,6 +2191,359 @@
 
 
         return bloque;
+
+      }
+
+
+      /* ===================================================
+         CREAR SELECTOR DE SEMANAS
+      =================================================== */
+
+      function crearSelectorSemanas() {
+
+        const viejo =
+          document.getElementById(
+            "briceno-semanas"
+          );
+
+
+        if (viejo) {
+          viejo.remove();
+        }
+
+
+        if (!semanas2027.length) {
+          return;
+        }
+
+
+        const selector =
+          document.createElement("div");
+
+
+        selector.id =
+          "briceno-semanas";
+
+
+        selector.className =
+          "briceno-semanas";
+
+
+        let botonesHTML = "";
+
+
+        semanas2027.forEach(
+          function (semana) {
+
+            const numero =
+              semana.numero;
+
+
+            const titulo =
+              numero === 0
+                ? "Semana 0"
+                : "Semana " + numero;
+
+
+            const descripcion =
+              numero === 0
+                ? "Introducción"
+                : "";
+
+
+            botonesHTML += `
+
+              <button
+                type="button"
+                class="briceno-semana-btn ${
+                  numero === semanaSeleccionada
+                    ? "active"
+                    : ""
+                }"
+                data-semana="${numero}"
+              >
+
+                ${titulo}
+
+                ${
+                  descripcion
+                    ? `
+                      <span class="semana-descripcion">
+                        ${descripcion}
+                      </span>
+                    `
+                    : ""
+                }
+
+              </button>
+
+            `;
+
+          }
+        );
+
+
+        selector.innerHTML = `
+
+          <div class="briceno-semanas-title">
+
+            <span>
+              📅
+            </span>
+
+            Selecciona la semana
+
+          </div>
+
+
+          <div class="briceno-semanas-lista">
+
+            ${botonesHTML}
+
+          </div>
+
+        `;
+
+
+        /*
+          LO COLOCAMOS DENTRO
+          DE LA INFORMACIÓN DEL PROCESO
+        */
+
+        const info =
+          document.querySelector(
+            ".briceno-proceso-info"
+          );
+
+
+        if (info) {
+
+          info.appendChild(
+            selector
+          );
+
+        }
+
+
+        /*
+          EVENTOS
+        */
+
+        selector
+          .querySelectorAll(
+            ".briceno-semana-btn"
+          )
+          .forEach(function (boton) {
+
+            boton.addEventListener(
+              "click",
+              function () {
+
+                semanaSeleccionada =
+                  Number(
+                    boton.dataset.semana
+                  );
+
+
+                mostrarSemana2027(
+                  semanaSeleccionada
+                );
+
+              }
+            );
+
+          });
+
+      }
+
+
+      /* ===================================================
+         MOSTRAR SEMANA 2027
+      =================================================== */
+
+      function mostrarSemana2027(numero) {
+
+        const semana =
+          semanas2027.find(
+            function (item) {
+
+              return (
+                item.numero === numero
+              );
+
+            }
+          );
+
+
+        if (!semana) {
+          return;
+        }
+
+
+        /*
+          ORGANIZAR CURSOS + SEMINARIOS
+        */
+
+        const areasOrganizadas =
+          organizarAreas(
+            semana.datos
+          );
+
+
+        const zona =
+          document.getElementById(
+            "briceno-semana-render"
+          );
+
+
+        if (!zona) {
+          return;
+        }
+
+
+        zona.innerHTML = "";
+
+
+        /* =================================================
+           ENCABEZADO SEMANA
+        ================================================= */
+
+        const header =
+          document.createElement("div");
+
+
+        header.className =
+          "briceno-semana-header";
+
+
+        header.innerHTML = `
+
+          <div class="briceno-semana-header-left">
+
+            <h3>
+
+              ${
+                numero === 0
+                  ? "Semana 0 — Introducción"
+                  : "Semana " + numero
+              }
+
+            </h3>
+
+            <p>
+
+              ${
+                numero === 0
+                  ? "Contenidos de introducción del proceso."
+                  : "Clases y contenidos correspondientes a esta semana."
+              }
+
+            </p>
+
+          </div>
+
+
+          <span class="briceno-semana-badge">
+
+            ${
+              areasOrganizadas.length
+            }
+
+            ${
+              areasOrganizadas.length === 1
+                ? " curso"
+                : " cursos"
+            }
+
+          </span>
+
+        `;
+
+
+        zona.appendChild(
+          header
+        );
+
+
+        /* =================================================
+           ÁREAS
+        ================================================= */
+
+        const areas =
+          document.createElement(
+            "div"
+          );
+
+
+        areas.className =
+          "briceno-areas";
+
+
+        if (
+          !areasOrganizadas.length
+        ) {
+
+          areas.innerHTML = `
+
+            <div class="briceno-empty">
+
+              No hay contenidos agregados
+              para esta semana todavía.
+
+            </div>
+
+          `;
+
+        }
+
+
+        else {
+
+          areasOrganizadas.forEach(
+            function (area, index) {
+
+              areas.appendChild(
+
+                crearArea(
+                  area,
+                  index,
+                  "2027"
+                )
+
+              );
+
+            }
+          );
+
+        }
+
+
+        zona.appendChild(
+          areas
+        );
+
+
+        /*
+          ACTUALIZAR BOTONES
+        */
+
+        document
+          .querySelectorAll(
+            ".briceno-semana-btn"
+          )
+          .forEach(function (boton) {
+
+            boton.classList.toggle(
+
+              "active",
+
+              Number(
+                boton.dataset.semana
+              ) === numero
+
+            );
+
+          });
 
       }
 
@@ -1517,7 +2637,9 @@
           `;
 
 
-          info.appendChild(drive);
+          info.appendChild(
+            drive
+          );
 
         }
 
@@ -1539,7 +2661,7 @@
           importante.innerHTML = `
 
             <strong>
-              📢 IMPORTANTE: ANATOMÍA se encuntra en BIOLOGÍA  
+              📢 IMPORTANTE: ANATOMÍA se encuentra en BIOLOGÍA
             </strong>
 
             <p>
@@ -1554,63 +2676,169 @@
           `;
 
 
-          info.appendChild(importante);
-
-        }
-
-
-        contenedor.appendChild(info);
-
-
-        /* =================================================
-           ÁREAS
-        ================================================= */
-
-        const areas =
-          document.createElement("div");
-
-
-        areas.className =
-          "briceno-areas";
-
-
-        if (
-          !Array.isArray(proceso.areas) ||
-          !proceso.areas.length
-        ) {
-
-          areas.innerHTML = `
-
-            <div class="briceno-empty">
-
-              No hay áreas agregadas todavía.
-
-            </div>
-
-          `;
-
-        }
-
-        else {
-
-          proceso.areas.forEach(
-            function (area, index) {
-
-              areas.appendChild(
-                crearArea(
-                  area,
-                  index,
-                  id
-                )
-              );
-
-            }
+          info.appendChild(
+            importante
           );
 
         }
 
 
-        contenedor.appendChild(areas);
+        contenedor.appendChild(
+          info
+        );
+
+
+        /* =================================================
+           PROCESO 2027
+        ================================================= */
+
+        if (id === "2027") {
+
+          /*
+            VOLVEMOS A DETECTAR LAS SEMANAS
+
+            Esto permite que si agregas una nueva
+            Semana02, Semana03, etc., aparezca.
+          */
+
+          semanas2027 =
+            obtenerSemanas2027();
+
+
+          /*
+            CONTENEDOR DE LA SEMANA
+          */
+
+          const semanaContenido =
+            document.createElement(
+              "div"
+            );
+
+
+          semanaContenido.className =
+            "briceno-semana-contenido";
+
+
+          semanaContenido.id =
+            "briceno-semana-render";
+
+
+          contenedor.appendChild(
+            semanaContenido
+          );
+
+
+          /*
+            CREAR SELECTOR
+
+            Lo insertamos dentro de
+            .briceno-proceso-info
+          */
+
+          crearSelectorSemanas();
+
+
+          /*
+            SI EXISTE SEMANA 0,
+            SELECCIONARLA POR DEFECTO
+          */
+
+          if (
+            semanas2027.some(
+              function (item) {
+                return item.numero === 0;
+              }
+            )
+          ) {
+
+            semanaSeleccionada = 0;
+
+          }
+
+          else if (
+            semanas2027.length
+          ) {
+
+            semanaSeleccionada =
+              semanas2027[0].numero;
+
+          }
+
+
+          /*
+            MOSTRAR SEMANA
+          */
+
+          mostrarSemana2027(
+            semanaSeleccionada
+          );
+
+
+        }
+
+
+        /* =================================================
+           PROCESO 2026
+        ================================================= */
+
+        else {
+
+          const areas =
+            document.createElement(
+              "div"
+            );
+
+
+          areas.className =
+            "briceno-areas";
+
+
+          if (
+            !Array.isArray(
+              proceso.areas
+            ) ||
+            !proceso.areas.length
+          ) {
+
+            areas.innerHTML = `
+
+              <div class="briceno-empty">
+
+                No hay áreas agregadas todavía.
+
+              </div>
+
+            `;
+
+          }
+
+
+          else {
+
+            proceso.areas.forEach(
+              function (area, index) {
+
+                areas.appendChild(
+
+                  crearArea(
+                    area,
+                    index,
+                    "2026"
+                  )
+
+                );
+
+              }
+            );
+
+          }
+
+
+          contenedor.appendChild(
+            areas
+          );
+
+        }
 
 
         /* =================================================
@@ -1627,21 +2855,24 @@
         else {
 
           aviso.textContent =
-            "Estás viendo la II Fase CEPREUNSA / Ordinario / CEPREQUINTOS 2027. Selecciona un área para ver sus clases.";
+            "Estás viendo la II Fase CEPREUNSA / Ordinario / CEPREQUINTOS 2027. Selecciona una semana para ver sus clases.";
 
         }
 
 
         /* =================================================
-           BOTONES
+           BOTONES DE PROCESO
         ================================================= */
 
         botones.forEach(
           function (boton) {
 
             boton.classList.toggle(
+
               "active",
+
               boton.dataset.proceso === id
+
             );
 
           }
@@ -1651,7 +2882,7 @@
 
 
       /* ===================================================
-         EVENTOS
+         EVENTOS PROCESOS
       =================================================== */
 
       botones.forEach(
@@ -1676,7 +2907,9 @@
          2026 POR DEFECTO
       =================================================== */
 
-      mostrarProceso("2026");
+      mostrarProceso(
+        "2026"
+      );
 
 
       /* ===================================================
@@ -1744,27 +2977,30 @@
       =================================================== */
 
       console.log(
-        "briceno2027Areas:",
-        window.briceno2027Areas
+        "Semanas Briceño 2027 detectadas:",
+        obtenerSemanas2027()
       );
 
 
       if (
-        !Array.isArray(
-          window.briceno2027Areas
-        )
+        !obtenerSemanas2027().length
       ) {
 
         console.error(
-          "ERROR: No se pudo cargar assets/briceñoareas2027.js"
+          "ERROR: No se encontraron arrays briceno2027SemanaXX en assets/briceñoareas2027.js"
         );
 
       }
+
       else {
 
         console.log(
-          "Áreas 2027 cargadas:",
-          window.briceno2027Areas.length
+          "Semanas 2027 cargadas:",
+          obtenerSemanas2027().map(
+            function (semana) {
+              return semana.clave;
+            }
+          )
         );
 
       }
@@ -1774,4 +3010,5 @@
   </script>
 
 </body>
+
 </html>
